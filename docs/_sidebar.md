@@ -73,5 +73,6 @@
   * [function-method-arrow](learn/function-method-arrow.md)
   * [sessionStorage-localStorage](learn/sessionStorage-localStorage.md)
   * [页面加载进度条](learn/page-progress.md)
+  * [newFileSystemAccessAPI](learn/newFileSystemAccessAPI.md)
     
 * [demo](example/README.md)
