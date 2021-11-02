@@ -1,9 +1,10 @@
 
-const treeMap = {}
-
+let treeMap = {}
+let root
 const OPTIONMAP = {
-  'remove': 'remove',
-  'edit': 'edit'
+  remove: 'remove',
+  edit: 'edit',
+  rename: 'rename'
 }
 
 let active
@@ -12,16 +13,11 @@ const fileEl = document.querySelector('#getFiles')
 const treeRoot = document.querySelector('#list')
 const textArea = document.querySelector('textarea')
 const saveFile = document.querySelector('#save')
-
-
+const createFile = document.querySelector('#createFile')
 
 fileEl.addEventListener('click', async function () {
   const handle = await window.showDirectoryPicker()
-  const ul = document.createElement('ul')
-  const tree = await createFileTree(handle, ul, true)
-  const list = document.querySelector('#list')
-  ul.append(tree)
-  list.append(ul)
+  initTreeList(handle)
 })
 
 treeRoot.addEventListener('click', function (event) {
@@ -31,26 +27,16 @@ treeRoot.addEventListener('click', function (event) {
   if (treeMap[id]) {
     const directory = treeMap[id].directory
     const file = treeMap[id].file
-    if (option === OPTIONMAP.remove) {
-      if (directory) {
-        directory.removeEntry(file.name).then(res => {
-          const removeEl = document.querySelector(`[treeid="${id}"]`)
-          removeEl.remove()
-          if (active === id) {
-            active = undefined
-            textArea.value = ''
-          }
-          treeMap[id] = undefined
-        })
-      }
-    }
-    if (option === OPTIONMAP.edit) {
-      file.getFile().then(res => {
-        res.text().then(res => {
-          console.log(res)
-          textArea.value = res
-        })
-      })
+    switch (option) {
+      case OPTIONMAP.remove:
+        removeFile(directory, file, id)
+        break
+      case OPTIONMAP.edit:
+        editFile(file)
+        break
+      // case OPTIONMAP.rename:
+      //   renameFile(directory, file, id)
+      //   break
     }
   }
 })
@@ -66,6 +52,25 @@ saveFile.addEventListener('click', async function () {
     await writable.close();
   }
 })
+
+createFile.addEventListener('click', async function () {
+  const newHandle = await window.showSaveFilePicker()
+  if (root) {
+    initTreeList(root)
+  }
+})
+
+async function initTreeList (handle) {
+  root = handle
+  treeMap = {}
+  active = undefined
+  const ul = document.createElement('ul')
+  const tree = await createFileTree(handle, ul, true)
+  const list = document.querySelector('#list')
+  ul.append(tree)
+  list.innerHTML = ''
+  list.append(ul)
+}
 
 async function createFileTree (directory, parentUl, root = false) {
   const ul = document.createElement('ul')
@@ -92,13 +97,21 @@ function createTreeDom (file, root, directory) {
 
   if (!root) {
     if (file.kind === 'file') {
-      const edit = document.createElement('button')
-      edit.innerText = '编辑'
-      edit.setAttribute('option', OPTIONMAP.edit)
-      const remove = document.createElement('button')
-      remove.innerText = '删除'
-      remove.setAttribute('option', OPTIONMAP.remove)
-      li.append(edit, remove)
+      const btnArr = [{
+        label: '编辑',
+        key: 'edit'
+      }, {
+        label: '删除',
+        key: 'remove'
+      }
+      // , {
+      //   label: '重命名',
+      //   key: 'rename'
+      // }
+      ]
+      li.append(...btnArr.map(curr => {
+        return createBtn(curr.label, curr.key)
+      }))
     }
   }
 
@@ -122,9 +135,56 @@ function findTreeId (el) {
   return false
 }
 
+function showModal (tip) {
+  const input = window.prompt(tip)
+  return input
+}
+
+function removeFile (directory, file, id) {
+  if (directory) {
+    directory.removeEntry(file.name).then(res => {
+      const removeEl = document.querySelector(`[treeid="${id}"]`)
+      removeEl.remove()
+      if (active === id) {
+        active = undefined
+        textArea.value = ''
+      }
+      treeMap[id] = undefined
+    })
+  }
+}
+
+async function renameFile (directory, file, id) {
+
+  const inputVal = showModal('新的文件名称')
+  if (inputVal && inputVal.trim()) {
+    const val = inputVal.trim()
+    for await (const key of directory.keys()) {
+      if (key === val) {
+        alert('存在重名文件')
+      }
+    }
+  }
+}
+
+function editFile (file) {
+  file.getFile().then(res => {
+    res.text().then(res => {
+      textArea.value = res
+    })
+  })
+}
+
 function createRandom () {
   const now = String(Date.now())
   const nowStr = now.slice(-10, now.length)
   const randomStr = String(Math.random()).slice(3, 13)
   return `${Number(randomStr).toString(32)}${Number(nowStr).toString(32)}`
+}
+
+function createBtn (label, key) {
+  const button = document.createElement('button')
+  button.innerText = label
+  button.setAttribute('option', OPTIONMAP[key])
+  return button
 }
