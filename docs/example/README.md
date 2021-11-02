@@ -8,3 +8,7 @@
 [监听devtool是否打开](https://heretic-g.github.io/example/devtool.html)
 
 [页面加载进度](https://heretic-g.github.io/example/pageLoading/index.html)
+
+[基础在线编辑](https://heretic-g.github.io/example/file/index.html)
+
+    只是使用和学习新版的file api 
