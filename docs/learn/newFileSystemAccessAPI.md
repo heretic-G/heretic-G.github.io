@@ -1,3 +1,7 @@
+好的文章
+
+* [The File System Access API: simplifying access to local files](https://web.dev/file-system-access/)
+---
 目前`new File System Access APIs`的API还不是很多
 
 导致在模拟一些场景的时候有很多操作还不能像应用那样的原生
