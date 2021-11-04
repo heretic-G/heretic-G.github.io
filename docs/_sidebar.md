@@ -74,5 +74,6 @@
   * [sessionStorage-localStorage](learn/sessionStorage-localStorage.md)
   * [页面加载进度条](learn/page-progress.md)
   * [newFileSystemAccessAPI](learn/newFileSystemAccessAPI.md)
+  * [font-weight](learn/font-weight.md)
     
 * [demo](example/README.md)
