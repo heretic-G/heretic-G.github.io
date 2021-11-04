@@ -28,7 +28,7 @@
   * [key](react/key.md)
 
 * [typescript](typescript/README.md)
-  
+  * [2070 - Drop Char](typescript/2070.md)
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
   * [array/274](leetcode/array/274.md)
