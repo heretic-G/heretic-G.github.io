@@ -81,5 +81,6 @@
   * [页面加载进度条](learn/page-progress.md)
   * [newFileSystemAccessAPI](learn/newFileSystemAccessAPI.md)
   * [font-weight](learn/font-weight.md)
+  * [arguments](learn/arguments.md)
     
 * [demo](example/README.md)
