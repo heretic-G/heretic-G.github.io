@@ -30,6 +30,7 @@
 * [typescript](typescript/README.md)
   * [2070 - Drop Char](typescript/2070.md)
   * [1130 - ReplaceKeys](typescript/1130.md)
+  * [UnionToIntersection](typescript/UnionToIntersection.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
