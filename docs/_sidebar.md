@@ -31,6 +31,8 @@
   * [2070 - Drop Char](typescript/2070.md)
   * [1130 - ReplaceKeys](typescript/1130.md)
   * [UnionToIntersection](typescript/UnionToIntersection.md)
+  * [2852-OmitByType](typescript/2852-OmitByType.md)
+  * [3192-Reverse](typescript/3192-Reverse.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
