@@ -29,6 +29,8 @@
 
 * [typescript](typescript/README.md)
   * [2070 - Drop Char](typescript/2070.md)
+  * [1130 - ReplaceKeys](typescript/1130.md)
+  
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
   * [array/274](leetcode/array/274.md)
@@ -37,6 +39,7 @@
   * [array/n数之和](leetcode/array/get-n-sum.md)
   * [array/offer-42](leetcode/array/offer-42.md)
   * [array/offer-53](leetcode/array/offer-53.md)
+  * [array/53-最大和子数组](leetcode/array/53.md)
     
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
   * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
