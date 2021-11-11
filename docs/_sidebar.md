@@ -86,5 +86,6 @@
   * [newFileSystemAccessAPI](learn/newFileSystemAccessAPI.md)
   * [font-weight](learn/font-weight.md)
   * [arguments](learn/arguments.md)
-  * [IsHTMLDDA](learn/IsHTMLDDA.md)  
+  * [IsHTMLDDA](learn/IsHTMLDDA.md)
+  * [operator](learn/operator.md)
 * [demo](example/README.md)
