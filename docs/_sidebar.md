@@ -28,8 +28,8 @@
   * [key](react/key.md)
 
 * [typescript](typescript/README.md)
-  * [2070 - Drop Char](typescript/2070.md)
-  * [1130 - ReplaceKeys](typescript/1130.md)
+  * [2070-Drop Char](typescript/2070.md)
+  * [1130-ReplaceKeys](typescript/1130.md)
   * [UnionToIntersection](typescript/UnionToIntersection.md)
   * [2852-OmitByType](typescript/2852-OmitByType.md)
   * [3192-Reverse](typescript/3192-Reverse.md)
@@ -37,6 +37,7 @@
   * [531-String-to-Union](typescript/531-String-to-Union.md)
   * [651-LengthOfString2](typescript/651-LengthofString2.md)
   * [399-TupleFilter](typescript/399-TupleFilter.md)
+  * [GenericTypes](typescript/GenericTypes.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
