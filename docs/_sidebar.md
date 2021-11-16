@@ -39,6 +39,7 @@
   * [399-TupleFilter](typescript/399-TupleFilter.md)
   * [GenericTypes](typescript/GenericTypes.md)
   * [847-StringJoin](typescript/847-StringJoin.md)
+  * [H-956-DeepPick](typescript/H-956-DeepPick.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
