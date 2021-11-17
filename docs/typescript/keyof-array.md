@@ -38,3 +38,32 @@ type test = Enum<typeof OperatingSystem>
 
 仔细想这里之所以没有想array[number] 可能是因为最近看了联合转数组 这里官方说无法是因为联合是无序
 那其实这里array[number]这里使用的其实是一个内部默认的联合顺序 
+
+还有一个情况是如果array 里面& 到别的非array 会导致map type 里面的key包含所有
+
+```typescript
+
+let arr = [1,2,3,4,5] as const
+
+type arrToObj<T> = {
+  [key in keyof T]: key
+}
+
+type test = arrToObj<typeof arr & { name: string}>
+// type test = {
+//     [x: number]: number;
+//     readonly 0: "0";
+//     readonly 1: "1";
+//     readonly 2: "2";
+//     readonly 3: "3";
+//     readonly 4: "4";
+//     length: "length";
+//     toString: "toString";
+//     toLocaleString: "toLocaleString";
+//     concat: "concat";
+//     ... 18 more ...;
+//     name: "name";
+// }
+
+```
+
