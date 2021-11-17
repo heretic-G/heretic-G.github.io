@@ -40,6 +40,8 @@
   * [GenericTypes](typescript/GenericTypes.md)
   * [847-StringJoin](typescript/847-StringJoin.md)
   * [H-956-DeepPick](typescript/H-956-DeepPick.md)
+  * [H-472-TupletoEnumObject](typescript/H-472-TupletoEnumObject.md)
+  * [keyof-array.md](typescript/keyof-array.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
