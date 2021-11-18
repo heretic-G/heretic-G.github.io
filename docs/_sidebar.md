@@ -43,6 +43,7 @@
   * [H-472-TupletoEnumObject](typescript/H-472-TupletoEnumObject.md)
   * [keyof-array](typescript/keyof-array.md)
   * [typeof-enum](typescript/typeof-enum.md)
+  * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
