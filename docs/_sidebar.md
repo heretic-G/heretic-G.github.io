@@ -75,6 +75,7 @@
   * [greedy/1877](leetcode/greedy/1877.md)
     
 * [learn](learn/README.md)
+  * [短代码学习](learn/AA-shortCode.md)
   * [fill导致array变慢](learn/Array-fill-slow.md)
   * [二进制](learn/binary.md)
   * [call,bind,apply,arrow,new](learn/call-bind-apply-arrow-new.md)
