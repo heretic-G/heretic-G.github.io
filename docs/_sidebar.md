@@ -56,6 +56,9 @@
   * [array/offer-42](leetcode/array/offer-42.md)
   * [array/offer-53](leetcode/array/offer-53.md)
   * [array/53-最大和子数组](leetcode/array/53.md)
+  
+
+  * [397-整数替换](leetcode/number/397-整数替换.md)
     
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
   * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
