@@ -46,6 +46,7 @@
   * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
   * [H-270-TypedGet](typescript/H-270-TypedGet.md)
   * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)
+  * [H-300-StringToNumber](typescript/H-300-StringtoNumber.md)
   
 * [leetcode](leetcode/README.md)
   * [array/17-10](leetcode/array/17-10.md)
