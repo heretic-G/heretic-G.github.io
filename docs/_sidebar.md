@@ -1,5 +1,8 @@
 <!-- docs/_sidebar.md -->
 
+* [计划目录](work.md)
+  它既是计划也是记录 或者说更多是记录
+
 * [手写系列](write-md/README.md)
   * [数组转树结构](write-md/array-to-tree.md)
   * [call,apply,bind](write-md/call-apply-bind.md)
