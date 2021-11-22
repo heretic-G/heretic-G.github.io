@@ -62,6 +62,7 @@
   * [array/offer-53](leetcode/array/offer-53.md)
   * [array/53-最大和子数组](leetcode/array/53.md)
   * [594-最长和谐子序列](leetcode/594-最长和谐子序列.md)
+  * [665-非递减数列](leetcode/665-非递减数列.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
     
