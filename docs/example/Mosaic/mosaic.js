@@ -10,23 +10,6 @@ function setAttr(el, attr) {
   }
 }
 
-const opt = {
-  el: document.querySelector('#mosaic-con'),
-  levelEl: document.querySelector('#level'),
-  uploadImg: document.querySelector('#uploadFile'),
-  operateAreaEl: document.querySelector('#operateArea'),
-  operateTypeEl: document.querySelector('#tool-type'),
-  reworkEl: document.querySelector('#rework'),
-  revertEl: document.querySelector('#revert'),
-  makeImgEl: document.querySelector('#makeImg'),
-  operateLevelEl: document.querySelector('#operateLevel'),
-  uploadWMFileEl: document.querySelector('#uploadWMFile'),
-  WMRepeatEl: document.querySelector('#WMRepeat'),
-  WMOpacityEl: document.querySelector('#WMOpacity'),
-  imgUrl:'./demo.jpg'
-}
-let mosaic = new Mosaic(opt)
-
 
 class Mosaic {
   constructor(option) {
@@ -172,7 +155,7 @@ class Mosaic {
     // 获取工具类型
     opt.operateType = opt.operateTypeEl.value;
     opt.canvasSize = parseInt(opt.width) * opt.pixelRatio;
-    opt.WMopacity = +opt.WMopacityEl.value;
+    opt.WMOpacity = +opt.WMOpacityEl.value;
   }
 
   /**
@@ -215,16 +198,16 @@ class Mosaic {
         height,
         top,
         left;
-      if (imgRatio > 1) {
+      if (imgRatio >= 1) {
         width = canvasSize / imgRatio,
-          height = canvasSize,
-          top = 0,
-          left = (canvasSize - width) / 2;
+        height = canvasSize,
+        top = 0,
+        left = (canvasSize - width) / 2;
       } else if (imgRatio < 1) {
         width = canvasSize,
-          height = imgRatio * canvasSize,
-          top = (canvasSize - height) / 2,
-          left = 0;
+        height = imgRatio * canvasSize,
+        top = (canvasSize - height) / 2,
+        left = 0;
       }
       opt.canvasBgCtx.drawImage(img, left, top, width, height)
     }
@@ -624,6 +607,8 @@ class Mosaic {
     // 上传水印图片 默认设置的总宽度的1/5
     opt.uploadWMFileEl.addEventListener('change', function (event) {
       let imgUrl = window.URL.createObjectURL(event.target.files[0]);
+      // 因为不能展示多个水印这里暂时清除画布
+      opt.canvasWaterMarkCtx.clearRect(0, 0, opt.canvasSize, opt.canvasSize);
       let img = new Image();
       img.src = imgUrl;
       img.onload = function (e) {
@@ -635,16 +620,16 @@ class Mosaic {
           height,
           top,
           left;
-        if (imgRatio > 1) {
+        if (imgRatio >= 1) {
           width = canvasSize / imgRatio,
-            height = canvasSize,
-            top = 0,
-            left = (canvasSize - width) / 2;
+          height = canvasSize,
+          top = 0,
+          left = (canvasSize - width) / 2;
         } else if (imgRatio < 1) {
           width = canvasSize,
-            height = imgRatio * canvasSize,
-            top = (canvasSize - height) / 2,
-            left = 0;
+          height = imgRatio * canvasSize,
+          top = (canvasSize - height) / 2,
+          left = 0;
         }
         opt.canvasWaterMarkCtx.drawImage(img, left, top, width, height);
         opt.WMInfo = {
@@ -657,10 +642,10 @@ class Mosaic {
       }
     })
     // 水印透明度设置 (还未增加保存)
-    opt.WMopacityEl.addEventListener('change', function (e) {
+    opt.WMOpacityEl.addEventListener('change', function (e) {
       // 获取水印信息
       let {left, top, width, height} = opt.WMInfo,
-        opacity = opt.WMopacity = +e.target.value;
+        opacity = opt.WMOpacity = +e.target.value;
       // 获取水印图片数据
       let imgInfo = opt.canvasWaterMarkCtx.getImageData(left, top, width, height),
         data = imgInfo.data,
@@ -675,3 +660,21 @@ class Mosaic {
     })
   }
 }
+
+const opt = {
+  el: document.querySelector('#mosaic-con'),
+  levelEl: document.querySelector('#level'),
+  uploadImg: document.querySelector('#uploadFile'),
+  operateAreaEl: document.querySelector('#operateArea'),
+  operateTypeEl: document.querySelector('#tool-type'),
+  reworkEl: document.querySelector('#rework'),
+  revertEl: document.querySelector('#revert'),
+  makeImgEl: document.querySelector('#makeImg'),
+  operateLevelEl: document.querySelector('#operateLevel'),
+  uploadWMFileEl: document.querySelector('#uploadWMFile'),
+  WMRepeatEl: document.querySelector('#WMRepeat'),
+  WMOpacityEl: document.querySelector('#WMOpacity'),
+  imgUrl: './demo.jpg'
+}
+
+let mosaic = new Mosaic(opt)
