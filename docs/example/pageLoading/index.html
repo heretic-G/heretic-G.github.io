@@ -3,107 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-
-      const broadcast = new BroadcastChannel('count-channel');
-
-      // 注册和标记初始化时间节点
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./serviceWorker.js', {scope: './'})
-          .then(function (registration) {
-            navigator.serviceWorker.ready.then(res => {
-              broadcast.postMessage({
-                type: 'init',
-                payload: performance.now()
-              })
-            })
-          })
-      }
-      // 监听资源加载完成
-      function perf_observer(list, observer) { // 处理 “measure” 事件
-        let entries = list.getEntries();
-        for (let i = 0; i < entries.length; i++) {
-          let item = resourceMap[entries[i].name]
-          if (!item || item.size !== 0 && entries[i].decodedBodySize === 0) {
-            continue
-          }
-          item.success = true
-          let successArr = []
-          let failArr = []
-          for (let key in resourceMap) {
-            if (resourceMap[key].success) {
-              successArr.push(key)
-              console.log('s',Object.keys(resourceMap).length, successArr.length)
-            } else {
-              failArr.push(key)
-              console.log('f', Object.keys(resourceMap).length, failArr.length)
-            }
-          }
-        }
-      }
-
-      const observer2 = new PerformanceObserver(perf_observer);
-
-      let resourceMap = {}
-      let openChannel = false
-      broadcast.onmessage = (event) => {
-        switch (event.data.type) {
-          case 'ack':
-            openChannel = true
-            let arr = performance.getEntries('resource')
-            observer2.observe({entryTypes: ["resource"]});
-            arr.forEach(curr => {
-              resourceMap[curr.name] = {
-                size: curr.decodedBodySize || 0,
-                success: true
-              }
-            })
-            fetchSize(event.data.payload)
-            break
-          case 'fetch':
-            if (openChannel) {
-              fetchSize(event.data.payload)
-            }
-            break
-        }
-      };
-
-      function fetchSize (urlArr) {
-        urlArr.forEach(url => {
-          if (!resourceMap[url]) {
-            resourceMap[url] = {
-              size: 0,
-              success: false
-            }
-            fetch(url, {
-              method: 'HEAD'
-            }).then(response => {
-              const size = response.headers.get('Content-Length')
-              console.log(url, size)
-              if (size !== null) {
-                resourceMap[url].size = Number(size) < 50 ? 0 : Number(size)
-              }
-            })
-          }
-        })
-        broadcast.postMessage(urlArr)
-      }
-    </script>
     <style>
-        .demo-img {
-            height: 100px;
-            width: 100px;
-            background-image: url("./33.png");
+        #showInfo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+        }
+        p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
+    <div id="showInfo"></div>
+<script>
+  let catchNum = 0
+  let sizeNum = 0
+  let successNum = 0
+
+  const showInfoEl = document.querySelector('#showInfo')
+  function createTip (type, filePath, size) {
+    const p = document.createElement('p')
+    let str
+    switch (type) {
+      case 'catch':
+        str = `catch: ${++catchNum} ${filePath}`
+        break
+      case 'size':
+        str = `size: ${++sizeNum} ${size} ${filePath}`
+        break
+      case 'success':
+        str = `success: ${++successNum} ${filePath}`
+        break
+      case 'info':
+        str = `info: ${filePath}`
+        break
+    }
+    console.log(str)
+    p.innerText = str
+    showInfoEl.append(p)
+  }
+
+  const broadcast = new BroadcastChannel('count-channel');
+
+  // 注册和标记初始化时间节点
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./serviceWorker.js', {scope: './'})
+      .then(function (registration) {
+        navigator.serviceWorker.ready.then(res => {
+          createTip('info', `${performance.now() | 0} serviceWorker 初始化完成`)
+          broadcast.postMessage({
+            type: 'init',
+            payload: performance.now()
+          })
+        })
+      })
+  }
+  // 监听资源加载完成
+  function perf_observer(list, observer) { // 处理 “measure” 事件
+    let entries = list.getEntries();
+    for (let i = 0; i < entries.length; i++) {
+      let item = resourceMap[entries[i].name]
+      if (!item || item.size !== 0 && entries[i].decodedBodySize === 0) {
+        continue
+      }
+      item.success = true
+      let successArr = []
+      let failArr = []
+      createTip('success', entries[i].name)
+      for (let key in resourceMap) {
+        if (resourceMap[key].success) {
+          successArr.push(key)
+        } else {
+          failArr.push(key)
+        }
+      }
+    }
+  }
+
+  const observer2 = new PerformanceObserver(perf_observer);
+
+  let resourceMap = {}
+  let openChannel = false
+  broadcast.onmessage = (event) => {
+    switch (event.data.type) {
+      case 'ack':
+        openChannel = true
+        let arr = performance.getEntries('resource')
+        observer2.observe({entryTypes: ["resource"]});
+        arr.forEach(curr => {
+          resourceMap[curr.name] = {
+            size: curr.decodedBodySize || 0,
+            success: true
+          }
+        })
+        fetchSize(event.data.payload)
+        break
+      case 'fetch':
+        if (openChannel) {
+          fetchSize(event.data.payload)
+        }
+        break
+    }
+  };
+
+  function fetchSize (urlArr) {
+    if (Array.isArray(urlArr)) {
+      urlArr.forEach(curr => {
+        createTip('catch', curr)
+      })
+    } else {
+      createTip('catch', urlArr)
+    }
+
+    broadcast.postMessage({
+      type: 'ack',
+      payload: urlArr
+    })
+    urlArr.forEach(url => {
+      if (!resourceMap[url]) {
+        resourceMap[url] = {
+          size: 0,
+          success: false
+        }
+        fetch(url, {
+          method: 'HEAD'
+        }).then(response => {
+          const size = response.headers.get('Content-Length')
+          createTip('size', url, size)
+          if (size !== null) {
+            resourceMap[url].size = Number(size) < 50 ? 0 : Number(size)
+          }
+        })
+      }
+    })
+  }
+</script>
+<style>
+    .demo-img {
+        height: 100px;
+        width: 100px;
+        background-image: url("./33.png");
+    }
+</style>
 <img src="./11.png" alt="">
 <img src="./22.png" alt="">
 <div class="demo-img"></div>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
 </body>
 </html>
