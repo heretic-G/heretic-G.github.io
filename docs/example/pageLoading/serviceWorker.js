@@ -21,7 +21,6 @@ broadcast.addEventListener('message', function (payload) {
       broadcast.postMessage({ type: 'ack', payload: Object.keys(broadcastReq)})
       break
     case 'ack':
-      console.log(`已经确认加载资源`, payload.data.payload)
       payload.data.payload.forEach(curr => {
         delete broadcastReq[curr]
       })

@@ -3,7 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #showInfo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+        }
+        body p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="showInfo"></div>
     <script>
+      let catchNum = 0
+      let sizeNum = 0
+      let successNum = 0
+
+      const showInfoEl = document.querySelector('#showInfo')
+      function createTip (type, filePath, size) {
+        const p = document.createElement('p')
+        let index = filePath.lastIndexOf('/')
+        if (index < 0) {
+          index = 0
+        }
+        filePath = filePath.slice(index)
+        let str
+        switch (type) {
+          case 'catch':
+            str = `${performance.now()|0}ms  catch: ${++catchNum} ${filePath}`
+            break
+          case 'size':
+            str = `${performance.now()|0}ms  size: ${++sizeNum} ${size} ${filePath}`
+            break
+          case 'success':
+            str = `${performance.now()|0}ms  success: ${++successNum} ${filePath}`
+            break
+          case 'info':
+            str = `${performance.now()|0}ms  info: ${filePath}`
+            break
+        }
+        console.log(str)
+        p.innerText = str
+        showInfoEl.append(p)
+      }
 
       const broadcast = new BroadcastChannel('count-channel');
 
@@ -12,6 +57,7 @@
         navigator.serviceWorker.register('./serviceWorker.js', {scope: './'})
           .then(function (registration) {
             navigator.serviceWorker.ready.then(res => {
+              createTip('info', `serviceWorker 初始化完成`)
               broadcast.postMessage({
                 type: 'init',
                 payload: performance.now()
@@ -30,13 +76,12 @@
           item.success = true
           let successArr = []
           let failArr = []
+          createTip('success', entries[i].name)
           for (let key in resourceMap) {
             if (resourceMap[key].success) {
               successArr.push(key)
-              console.log('s',Object.keys(resourceMap).length, successArr.length)
             } else {
               failArr.push(key)
-              console.log('f', Object.keys(resourceMap).length, failArr.length)
             }
           }
         }
@@ -69,6 +114,18 @@
       };
 
       function fetchSize (urlArr) {
+        if (Array.isArray(urlArr)) {
+          urlArr.forEach(curr => {
+            createTip('catch', curr)
+          })
+        } else {
+          createTip('catch', urlArr)
+        }
+
+        broadcast.postMessage({
+          type: 'ack',
+          payload: urlArr
+        })
         urlArr.forEach(url => {
           if (!resourceMap[url]) {
             resourceMap[url] = {
@@ -79,14 +136,13 @@
               method: 'HEAD'
             }).then(response => {
               const size = response.headers.get('Content-Length')
-              console.log(url, size)
+              createTip('size', url, size)
               if (size !== null) {
                 resourceMap[url].size = Number(size) < 50 ? 0 : Number(size)
               }
             })
           }
         })
-        broadcast.postMessage(urlArr)
       }
     </script>
     <style>
@@ -96,14 +152,15 @@
             background-image: url("./33.png");
         }
     </style>
-</head>
-<body>
-<img src="./11.png" alt="">
-<img src="./22.png" alt="">
-<div class="demo-img"></div>
+    <img src="./11.png" alt="">
+    <img src="./22.png" alt="">
+    <div class="demo-img"></div>
 
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/antd/4.16.9/antd.min.css" rel="stylesheet">
 </body>
 </html>

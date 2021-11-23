@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <div>
+
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        function showTip (str) {
+          let p = document.createElement('p')
+          p.innerText = str
+          console.log(str)
+          div.append(p)
+        }
+
+        function filter (str) {
+          return str.replace(/[^\u4e00-\u9fa5_a-zA-Z0-9]/g, '')
+        }
+
+        let status = false
+        const input = document.querySelector('input')
+        input.addEventListener('input', function (e) {
+          if (!status) {
+            let val = filter(e.target.value)
+            input.value = val
+            showTip(val)
+          }
+        })
+
+        input.addEventListener('compositionstart', function (e) {
+          status = true
+        })
+
+        input.addEventListener('compositionend', function (e) {
+          status = false
+          let val = filter(e.target.value)
+          input.value = val
+          showTip(val)
+        })
+    </script>
+
+</body>
+</html>
