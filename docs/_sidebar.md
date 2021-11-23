@@ -62,22 +62,22 @@
   * [offer-42](leetcode/array/offer-42.md)
   * [offer-53](leetcode/array/offer-53.md)
   * [53-最大和子数组](leetcode/array/53.md)
-  * [594-最长和谐子序列](leetcode/594-最长和谐子序列.md)
-  * [665-非递减数列](leetcode/665-非递减数列.md)
-  * [528-按权重随机选择](leetcode/528-按权重随机选择.md)
+  * [594-最长和谐子序列](leetcode/array/594-最长和谐子序列.md)
+  * [665-非递减数列](leetcode/array/665-非递减数列.md)
+  * [528-按权重随机选择](leetcode/array/528-按权重随机选择.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
   * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
-  * [559-N叉树的最大深度](leetcode/559-N叉树的最大深度.md)
+  * [559-N叉树的最大深度](leetcode/BinaryTree/559-N叉树的最大深度.md)
   
   [comment]: <> (  trie)
-  * [208-实现Trie(前缀树)](leetcode/208-实现Trie(前缀树).md)
+  * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
 
   [comment]: <> (    string)
-  * [241-为运算表达式设计优先级](leetcode/241-为运算表达式设计优先级.md)
+  * [241-为运算表达式设计优先级](leetcode/string/241-为运算表达式设计优先级.md)
     
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
