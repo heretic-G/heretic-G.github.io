@@ -51,6 +51,8 @@
   * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)
   * [H-300-StringToNumber](typescript/H-300-StringtoNumber.md)
   * [H-1290-Pinia](typescript/H-1290-Pinia.md)
+  * [H-223-IsAny](typescript/H-223-IsAny.md)
+  * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
   
 * [leetcode](leetcode/README.md)
   
