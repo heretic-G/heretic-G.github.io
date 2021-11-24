@@ -43,7 +43,7 @@
   * [GenericTypes](typescript/GenericTypes.md)
   * [847-StringJoin](typescript/847-StringJoin.md)
   * [H-956-DeepPick](typescript/H-956-DeepPick.md)
-  * [H-472-TupletoEnumObject](typescript/H-472-TupletoEnumObject.md)
+  * [H-472-TupleToEnumObject](typescript/H-472-TupletoEnumObject.md)
   * [keyof-array](typescript/keyof-array.md)
   * [typeof-enum](typescript/typeof-enum.md)
   * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
@@ -68,6 +68,8 @@
   * [594-最长和谐子序列](leetcode/array/594-最长和谐子序列.md)
   * [665-非递减数列](leetcode/array/665-非递减数列.md)
   * [528-按权重随机选择](leetcode/array/528-按权重随机选择.md)
+  * [75-颜色分类](leetcode/array/75-颜色分类.md)
+  * [238-除自身以外数组的乘积](leetcode/array/238-除自身以外数组的乘积.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
@@ -81,6 +83,7 @@
 
   [comment]: <> (    string)
   * [241-为运算表达式设计优先级](leetcode/string/241-为运算表达式设计优先级.md)
+  * [859-亲密字符串](leetcode/string/859-亲密字符串.md)
     
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
