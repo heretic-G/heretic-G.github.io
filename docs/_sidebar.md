@@ -72,6 +72,7 @@
   * [238-除自身以外数组的乘积](leetcode/array/238-除自身以外数组的乘积.md)
   * [46-全排列](leetcode/array/46-全排列.md)
   * [47-全排列II](leetcode/array/47-全排列II.md)
+  * [60-排列序列](leetcode/array/60-排列序列.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
