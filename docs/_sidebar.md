@@ -77,6 +77,7 @@
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
   * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
   * [559-N叉树的最大深度](leetcode/BinaryTree/559-N叉树的最大深度.md)
+  * [563-二叉树的坡度](leetcode/BinaryTree/563-二叉树的坡度.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
