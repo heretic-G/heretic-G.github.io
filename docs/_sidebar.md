@@ -70,6 +70,7 @@
   * [528-按权重随机选择](leetcode/array/528-按权重随机选择.md)
   * [75-颜色分类](leetcode/array/75-颜色分类.md)
   * [238-除自身以外数组的乘积](leetcode/array/238-除自身以外数组的乘积.md)
+  * [452-用最少数量的箭引爆气球](leetcode/array/452-用最少数量的箭引爆气球.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
@@ -89,10 +90,14 @@
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
     
-  * [dp/70](leetcode/dp/70.md)
-  * [dp/509](leetcode/dp/509.md)
-  * [dp/746](leetcode/dp/746.md)
-  * [dp/1137](leetcode/dp/1137.md)
+  [comment]: <> (dp)
+  * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
+  * [dp/509-斐波那契数](leetcode/dp/509-斐波那契数.md)
+  * [dp/746-使用最小花费爬楼梯](leetcode/dp/746-使用最小花费爬楼梯.md)
+  * [dp/1137-第N个泰波那契数](leetcode/dp/1137-第N个泰波那契数.md)
+  * [dp/198-打家劫舍](leetcode/dp/198-打家劫舍.md)
+  * [dp/213-打家劫舍II](leetcode/dp/213-打家劫舍II.md)
+  * [dp/313-超级丑数](leetcode/dp/313-超级丑数.md)
     
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
