@@ -1,7 +1,10 @@
 <!-- docs/_sidebar.md -->
 
 * [计划目录](work.md)
-  它既是计划也是记录 或者说更多是记录
+  
+  * [目录](work.md)
+    
+    它既是计划也是记录 或者说更多是记录
 
 * [手写系列](write-md/README.md)
   * [数组转树结构](write-md/array-to-tree.md)
@@ -120,6 +123,7 @@
   * [instanceof](learn/instanceof.md)
   * [object-create](learn/object-create.md)
   * [onerror](learn/onerror.md)
+  * [how-to-learn-ecmascript](learn/how-to-learn-ecmascript.md)
   * [promise](learn/promise.md)
   * [reference-record](learn/referenceRecord.md)
   * [autoplay](learn/autoplay.md)
