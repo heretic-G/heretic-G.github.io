@@ -1,3 +1,7 @@
+=>>>>> [首页](https://heretic-g.github.io/)
+
+下面都是独立demo
+
 #### 独立成demo的实现
 
 计划是很多的 但是拆分出来的很少...
@@ -27,7 +31,7 @@
         编辑保存需要手动处理
 
 [基础在线编辑-单文件编辑](https://heretic-g.github.io/example/file/file.html)
-    
+
     和上面的demo一样 这个只能选择一个文件会自动保存(就是操作间隔300ms)
 
 [处理输入框的中文展示和过滤](https://heretic-g.github.io/inputShowAndLimit/index.html)
@@ -39,7 +43,7 @@
     期望react上的话 需要对接原生的event 不然如果使用受控组件这里在合成阶段 val不能变 不能变其实就是react给你设置了val会跳出来 需要手动封装一层
 
 [图片增加马赛克和水印](https://heretic-g.github.io/Mosaic/index.html)
-    
+
     基础的图片增加马赛克和水印功能  (水印不能增加多个)
     实际处理是4层canvas的结构
     从底下数 第一层背景 第二层马赛克 第三层水印 第四层操作
