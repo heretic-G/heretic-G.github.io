@@ -53,6 +53,7 @@
   * [H-1290-Pinia](typescript/H-1290-Pinia.md)
   * [H-223-IsAny](typescript/H-223-IsAny.md)
   * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
+  * [H-55-UnionToIntersection](typescript/H-55-UnionToIntersection.md)
   
 * [leetcode](leetcode/README.md)
   
