@@ -96,6 +96,7 @@
   * [559-N叉树的最大深度](leetcode/BinaryTree/559-N叉树的最大深度.md)
   * [563-二叉树的坡度](leetcode/BinaryTree/563-二叉树的坡度.md)
   * [101-对称二叉树](leetcode/BinaryTree/101-对称二叉树.md)
+  * [226-翻转二叉树](leetcode/BinaryTree/226-翻转二叉树.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -116,7 +117,11 @@
   * [dp/198-打家劫舍](leetcode/dp/198-打家劫舍.md)
   * [dp/213-打家劫舍II](leetcode/dp/213-打家劫舍II.md)
   * [dp/313-超级丑数](leetcode/dp/313-超级丑数.md)
-    
+  
+  [comment]: <> (  number)
+  * [69-Sqrt(x)](leetcode/number/69-Sqrt(x).md)
+  * [470-用Rand7()实现Rand10()](leetcode/number/470-用Rand7()实现Rand10().md)
+
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
   * [greedy/605](leetcode/greedy/605.md)
