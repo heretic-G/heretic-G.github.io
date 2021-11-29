@@ -87,6 +87,7 @@
   * [46-全排列](leetcode/array/46-全排列.md)
   * [47-全排列II](leetcode/array/47-全排列II.md)
   * [60-排列序列](leetcode/array/60-排列序列.md)
+  * [448-找到所有数组中消失的数字](leetcode/array/448-找到所有数组中消失的数字.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
@@ -97,6 +98,7 @@
   * [563-二叉树的坡度](leetcode/BinaryTree/563-二叉树的坡度.md)
   * [101-对称二叉树](leetcode/BinaryTree/101-对称二叉树.md)
   * [226-翻转二叉树](leetcode/BinaryTree/226-翻转二叉树.md)
+  * [109-有序链表转换二叉搜索树](leetcode/BinaryTree/109-有序链表转换二叉搜索树.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -156,4 +158,6 @@
   * [IsHTMLDDA](learn/IsHTMLDDA.md)
   * [operator](learn/operator.md)
   * [CascadeSortingOrder](learn/CascadeSortingOrder.md)
+  * [transition](learn/transition.md)
+  
 * [demo](example/README.md)
