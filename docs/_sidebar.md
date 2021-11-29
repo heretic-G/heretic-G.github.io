@@ -88,6 +88,7 @@
   * [47-全排列II](leetcode/array/47-全排列II.md)
   * [60-排列序列](leetcode/array/60-排列序列.md)
   * [448-找到所有数组中消失的数字](leetcode/array/448-找到所有数组中消失的数字.md)
+  * [287-寻找重复数](leetcode/array/287-寻找重复数.md)
 
   * [397-整数替换](leetcode/number/397-整数替换.md)
 
