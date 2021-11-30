@@ -89,8 +89,9 @@
   * [60-排列序列](leetcode/array/60-排列序列.md)
   * [448-找到所有数组中消失的数字](leetcode/array/448-找到所有数组中消失的数字.md)
   * [287-寻找重复数](leetcode/array/287-寻找重复数.md)
-
-  * [397-整数替换](leetcode/number/397-整数替换.md)
+  * [169-多数元素](leetcode/array/169-多数元素.md)
+  * [747-至少是其他数字两倍的最大数](leetcode/array/747-至少是其他数字两倍的最大数.md)
+  * [560-和为K的子数组](leetcode/array/560-和为K的子数组.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
@@ -120,10 +121,13 @@
   * [dp/198-打家劫舍](leetcode/dp/198-打家劫舍.md)
   * [dp/213-打家劫舍II](leetcode/dp/213-打家劫舍II.md)
   * [dp/313-超级丑数](leetcode/dp/313-超级丑数.md)
+  * [dp/64-最小路径和](leetcode/dp/64-最小路径和.md)
   
   [comment]: <> (  number)
   * [69-Sqrt(x)](leetcode/number/69-Sqrt(x).md)
   * [470-用Rand7()实现Rand10()](leetcode/number/470-用Rand7()实现Rand10().md)
+  * [504-七进制数](leetcode/number/504-七进制数.md)
+  * [397-整数替换](leetcode/number/397-整数替换.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
