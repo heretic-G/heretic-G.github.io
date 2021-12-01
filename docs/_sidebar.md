@@ -165,5 +165,6 @@
   * [CascadeSortingOrder](learn/CascadeSortingOrder.md)
   * [transition](learn/transition.md)
   * [tls](learn/tls.md)
+  * [serviceWorkerUpdate](learn/serviceWorkerUpdate.md)
   
 * [demo](example/README.md)

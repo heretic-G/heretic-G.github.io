@@ -1,0 +1,13 @@
+service worker 的更新如果不是无脑skipWaiting 
+
+那就需要一个强制的更新逻辑 无论是需要提示用户还是一个强制的更新都是需要这样的一个逻辑
+
+因为service worker只有在全部tab都关闭才可以 正常是不能靠刷新去更新的
+
+那实现的基本方式就是在除了active的service worker 的逻辑中 去提示用户或者得到用户同意后去service worker
+
+调skipWaiting之后再调用reload 就好了
+
+目前还有2个逻辑需要优化 第一个就是如果存在一个waiting 但是可能还有一个installing这里需要做处理
+
+还有就是多个tab的时候需要只刷新一个或者一个统一全部同步刷新
