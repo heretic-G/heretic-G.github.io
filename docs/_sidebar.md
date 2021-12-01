@@ -106,6 +106,7 @@
   * [513-找树左下角的值](leetcode/BinaryTree/513-找树左下角的值.md)
   * [404-左叶子之和](leetcode/BinaryTree/404-左叶子之和.md)
   * [94-二叉树的中序遍历](leetcode/BinaryTree/94-二叉树的中序遍历.md)
+  * [112-路径总和](leetcode/BinaryTree/112-路径总和.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
