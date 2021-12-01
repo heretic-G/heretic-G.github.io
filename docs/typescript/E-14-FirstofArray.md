@@ -6,3 +6,5 @@
 type First<T extends any[]> = T extends [] ? never : T[0]
 
 ```
+
+再看这题真的...我估计我可能直接infer 哈哈哈 [0]真的可能就是还是要在进一步 

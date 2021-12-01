@@ -66,6 +66,7 @@
   * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
   * [H-55-UnionToIntersection](typescript/H-55-UnionToIntersection.md)
   * [H-17-Currying1](typescript/H-17-Currying1.md)
+  * [H-545-printf](typescript/H-545-printf.md)
   
 * [leetcode](leetcode/README.md)
   
