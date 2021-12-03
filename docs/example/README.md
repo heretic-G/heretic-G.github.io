@@ -52,3 +52,18 @@
     马赛克生成是实时算的 这里其实算的范围小 也可以换一种方式 一次生成完整的马赛克图片 马赛克其实就是展示对应的马赛克图片的opacity为1 
     这里的问题在于一次生成会造成堵塞感 需要切小片 分片计算 如果在未生成完整的时候操作马赛克 已生成区域直接展示 未生成区域 直接按照对应分块生成
     这里有个性能在于可能需要的区域小于很多要实际生成的区域 所以这里需要尝试下分块大小的不同实际体感 尤其是低性能端
+
+
+[简单的限制请求+loading](https://heretic-g.github.io/limitApi/index.html)
+
+    这是一个zepto的项目 初始是想要不大改或者在业务这边在增加很多重复代码的情况
+    实现api的loading效果(具体的UI原本没打算在这里的后来想了想就直接也仍在这里了)
+    具体逻辑就是在一个btn上增加一个tag 在点击的捕获和冒泡都在document增加绑定
+    一次点击触发的fetch会基于参数生成唯一key然后产生一个自增的id 有个全局参数是activeKey
+    累次都是累加上去(主要是为了一个click触发多个fetch 然后在冒泡的document会消费掉这个activeKey获取到所有的id 增加一个tag到dom)
+    每个fetch回来会清除掉对应id的 一个组合都回来会清除对应key的tag document这里进来目标是btn看下有标志吗 有就直接取消冒泡...
+    处理最后有个逻辑问题是无法获取click触发的异步逻辑
+
+    其实如果可以改动的大一些就是做个绑定逻辑el、clickFun 返回一个set disabled set loading的对象 clickfun内返回promise 在promise上挂finally 
+    disabeld设置为false 解除disanled 点击后变为loading 禁止点击在clickfun的finally里面在恢复非loaidng
+    类似react或者vue的组件这里只是封装的逻辑

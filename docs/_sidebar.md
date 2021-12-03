@@ -99,6 +99,7 @@
   * [506-相对名次](leetcode/array/506-相对名次.md)
   * [77-组合](leetcode/array/77-组合.md)
   * [384-打乱数组](leetcode/array/384-打乱数组.md)
+  * [1005-K次取反后最大化的数组和](leetcode/array/1005-K次取反后最大化的数组和.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
@@ -143,6 +144,7 @@
   * [470-用Rand7()实现Rand10()](leetcode/number/470-用Rand7()实现Rand10().md)
   * [504-七进制数](leetcode/number/504-七进制数.md)
   * [397-整数替换](leetcode/number/397-整数替换.md)
+  * [202-快乐数](leetcode/number/202-快乐数.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
