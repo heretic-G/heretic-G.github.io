@@ -94,6 +94,9 @@
   * [747-至少是其他数字两倍的最大数](leetcode/array/747-至少是其他数字两倍的最大数.md)
   * [560-和为K的子数组](leetcode/array/560-和为K的子数组.md)
   * [763-划分字母区间](leetcode/array/763-划分字母区间.md)
+  * [506-相对名次](leetcode/array/506-相对名次.md)
+  * [77-组合](leetcode/array/77-组合.md)
+  * [384-打乱数组](leetcode/array/384-打乱数组.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
@@ -107,6 +110,7 @@
   * [404-左叶子之和](leetcode/BinaryTree/404-左叶子之和.md)
   * [94-二叉树的中序遍历](leetcode/BinaryTree/94-二叉树的中序遍历.md)
   * [112-路径总和](leetcode/BinaryTree/112-路径总和.md)
+  * [257-二叉树的所有路径](leetcode/BinaryTree/257-二叉树的所有路径.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -115,9 +119,12 @@
   * [241-为运算表达式设计优先级](leetcode/string/241-为运算表达式设计优先级.md)
   * [859-亲密字符串](leetcode/string/859-亲密字符串.md)
   * [438-找到字符串中所有字母异位词](leetcode/string/438-找到字符串中所有字母异位词.md)
+  * [1446-连续字符](leetcode/string/1446-连续字符.md)
     
+  [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
+  * [2-两数相加](leetcode/chain/2-两数相加.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
@@ -172,5 +179,6 @@
   * [transition](learn/transition.md)
   * [tls](learn/tls.md)
   * [serviceWorkerUpdate](learn/serviceWorkerUpdate.md)
+  * [p-divided](learn/p-divided.md)
   
 * [demo](example/README.md)
