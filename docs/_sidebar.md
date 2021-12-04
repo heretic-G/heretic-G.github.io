@@ -57,6 +57,7 @@
   * [H-17-Currying1](typescript/H-17-Currying1.md)
   * [H-55-UnionToIntersection](typescript/H-55-UnionToIntersection.md)
   * [H-57-GetRequired](typescript/H-57-GetRequired.md)
+  * [H-59-GetOptional](typescript/H-59-GetOptional.md)
   * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
   * [H-223-IsAny](typescript/H-223-IsAny.md)
   * [H-270-TypedGet](typescript/H-270-TypedGet.md)
