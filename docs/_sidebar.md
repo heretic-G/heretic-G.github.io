@@ -66,6 +66,7 @@
   * [H-223-IsAny](typescript/H-223-IsAny.md)
   * [H-270-TypedGet](typescript/H-270-TypedGet.md)
   * [H-300-StringToNumber](typescript/H-300-StringtoNumber.md)
+  * [H-399-TupleFilter](typescript/H-399-TupleFilter.md)
   * [H-472-TupleToEnumObject](typescript/H-472-TupletoEnumObject.md)
   * [H-545-printf](typescript/H-545-printf.md)
   * [H-847-StringJoin](typescript/H-847-StringJoin.md)
