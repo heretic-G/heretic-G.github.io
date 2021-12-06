@@ -121,6 +121,7 @@
   * [94-二叉树的中序遍历](leetcode/BinaryTree/94-二叉树的中序遍历.md)
   * [112-路径总和](leetcode/BinaryTree/112-路径总和.md)
   * [257-二叉树的所有路径](leetcode/BinaryTree/257-二叉树的所有路径.md)
+  * [236-二叉树的最近公共祖先](leetcode/BinaryTree/236-二叉树的最近公共祖先.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
