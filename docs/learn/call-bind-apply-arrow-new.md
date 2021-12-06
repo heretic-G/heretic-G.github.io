@@ -3,6 +3,9 @@
 #### call apply
     call和apply 其实最简单 这里其实就是使用第一个参数然后当做this直接去调用了内部的call方法
 
+    这里还是记录下call apply的逻辑 其实就是第一个this的逻辑 如果是null undefined是window 否则
+    对象数组函数直接扔 原始类型 会变成对应的封装类型的对象 当做this 其他的其实就真没啥了
+
 #### bind
     bind这里会创建一个bind fun 为什么他不能影响new和bind fun不会被call和apply改变呢
 
