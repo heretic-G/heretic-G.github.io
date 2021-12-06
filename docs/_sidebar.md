@@ -59,6 +59,7 @@
   * [H-57-GetRequired](typescript/H-57-GetRequired.md)
   * [H-59-GetOptional](typescript/H-59-GetOptional.md)
   * [H-89-RequiredKeys](typescript/H-89-RequiredKeys.md)
+  * [H-90-OptionalKeys](typescript/H-90-OptionalKeys.md)
   * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
   * [H-223-IsAny](typescript/H-223-IsAny.md)
   * [H-270-TypedGet](typescript/H-270-TypedGet.md)
