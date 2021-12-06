@@ -61,6 +61,7 @@
   * [H-89-RequiredKeys](typescript/H-89-RequiredKeys.md)
   * [H-90-OptionalKeys](typescript/H-90-OptionalKeys.md)
   * [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
+  * [H-114-CamelCase](typescript/H-114-CamelCase.md)
   * [H-223-IsAny](typescript/H-223-IsAny.md)
   * [H-270-TypedGet](typescript/H-270-TypedGet.md)
   * [H-300-StringToNumber](typescript/H-300-StringtoNumber.md)
