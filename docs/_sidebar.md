@@ -125,6 +125,7 @@
   * [859-亲密字符串](leetcode/string/859-亲密字符串.md)
   * [438-找到字符串中所有字母异位词](leetcode/string/438-找到字符串中所有字母异位词.md)
   * [1446-连续字符](leetcode/string/1446-连续字符.md)
+  * [1816-截断句子](leetcode/string/1816-截断句子.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
