@@ -69,6 +69,7 @@
   * [H-399-TupleFilter](typescript/H-399-TupleFilter.md)
   * [H-472-TupleToEnumObject](typescript/H-472-TupletoEnumObject.md)
   * [H-545-printf](typescript/H-545-printf.md)
+  * [H-553-DeepObjectToUnique](typescript/H-553-DeepObjectToUnique.md)
   * [H-847-StringJoin](typescript/H-847-StringJoin.md)
   * [H-956-DeepPick](typescript/H-956-DeepPick.md)
   * [H-1290-Pinia](typescript/H-1290-Pinia.md)
