@@ -162,6 +162,7 @@
   * [greedy/763](leetcode/greedy/763.md)
   * [greedy/1713](leetcode/greedy/1713.md)
   * [greedy/1877](leetcode/greedy/1877.md)
+  * [870-优势洗牌](leetcode/greedy/870-优势洗牌.md)
 
   [comment]: <> (  graph)
   * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)    
