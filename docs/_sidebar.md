@@ -162,7 +162,10 @@
   * [greedy/763](leetcode/greedy/763.md)
   * [greedy/1713](leetcode/greedy/1713.md)
   * [greedy/1877](leetcode/greedy/1877.md)
-    
+
+  [comment]: <> (  graph)
+  * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)    
+
 * [learn](learn/README.md)
   * [短代码学习](learn/AA-shortCode.md)
   * [fill导致array变慢](learn/Array-fill-slow.md)
