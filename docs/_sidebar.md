@@ -122,6 +122,7 @@
   * [94-二叉树的中序遍历](leetcode/BinaryTree/94-二叉树的中序遍历.md)
   * [112-路径总和](leetcode/BinaryTree/112-路径总和.md)
   * [257-二叉树的所有路径](leetcode/BinaryTree/257-二叉树的所有路径.md)
+  * [236-二叉树的最近公共祖先](leetcode/BinaryTree/236-二叉树的最近公共祖先.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -162,7 +163,11 @@
   * [greedy/763](leetcode/greedy/763.md)
   * [greedy/1713](leetcode/greedy/1713.md)
   * [greedy/1877](leetcode/greedy/1877.md)
-    
+  * [870-优势洗牌](leetcode/greedy/870-优势洗牌.md)
+
+  [comment]: <> (  graph)
+  * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)    
+
 * [learn](learn/README.md)
   * [短代码学习](learn/AA-shortCode.md)
   * [fill导致array变慢](learn/Array-fill-slow.md)
