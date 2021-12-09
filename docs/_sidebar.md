@@ -112,6 +112,7 @@
   * [1005-K次取反后最大化的数组和](leetcode/array/1005-K次取反后最大化的数组和.md)
   * [794-有效的井字游戏](leetcode/array/794-有效的井字游戏.md)
   * [136-只出现一次的数字](leetcode/array/136-只出现一次的数字.md)
+  * [496-下一个更大元素I](leetcode/array/496-下一个更大元素I.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
