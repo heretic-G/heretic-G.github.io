@@ -2,9 +2,7 @@
 
 * [计划目录](work.md)
   
-  * [目录](work.md)
-    
-    它既是计划也是记录 或者说更多是记录
+  * [目录](work.md) 它既是计划也是记录 或者说更多是记录
 
 * [手写系列](write-md/README.md)
   * [数组转树结构](write-md/array-to-tree.md)
@@ -34,6 +32,7 @@
   * [key](react/key.md)
 
 * [typescript](typescript/README.md)
+
   * [keyof-array](typescript/keyof-array.md)
   * [typeof-enum](typescript/typeof-enum.md)
   * [UnionToIntersection](typescript/UnionToIntersection.md)
@@ -171,6 +170,7 @@
   * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)    
 
 * [learn](learn/README.md)
+
   * [短代码学习](learn/AA-shortCode.md)
   * [fill导致array变慢](learn/Array-fill-slow.md)
   * [二进制](learn/binary.md)
