@@ -109,6 +109,7 @@
   * [77-组合](leetcode/array/77-组合.md)
   * [384-打乱数组](leetcode/array/384-打乱数组.md)
   * [1005-K次取反后最大化的数组和](leetcode/array/1005-K次取反后最大化的数组和.md)
+  * [794-有效的井字游戏](leetcode/array/794-有效的井字游戏.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
