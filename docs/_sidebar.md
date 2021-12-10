@@ -76,6 +76,7 @@
   * [H-1290-Pinia](typescript/H-1290-Pinia.md)
   * [H-1383-Camelize](typescript/H-1383-Camelize.md)
   * [H-2059-DropString](typescript/H-2059-DropString.md)
+  * [H-2822-Split](typescript/H-2822-Split.md)
   * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
   * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)  
   
