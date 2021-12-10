@@ -141,6 +141,7 @@
   * [1446-连续字符](leetcode/string/1446-连续字符.md)
   * [1816-截断句子](leetcode/string/1816-截断句子.md)
   * [383-赎金信](leetcode/string/383-赎金信.md)
+  * [748-最短补全词](leetcode/string/748-最短补全词.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
