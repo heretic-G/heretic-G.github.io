@@ -28,6 +28,7 @@
   * [链式过滤数据](write-md/find-chainngCall.md)
   * [localStorage过期时间](write-md/expiresLocalStorage.md)
   * [实现个基本堆](write-md/lc/堆.md)
+  * [lru](write-md/lru.md)
 
 * [react](react/README.md)
   * [key](react/key.md)

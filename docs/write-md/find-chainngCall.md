@@ -26,33 +26,28 @@ const result = find(data).where({
     "title": /\d$/   // 这里意思是过滤出数组中，满足title字段中符合 /\d$/的项
 }).orderBy('userId', 'desc');  // 这里的意思是对数组中的项按照userId进行倒序排列
 
-function find (data) {
-    const temp = Array.isArray(data) ? [...data] : {...data}
-    let opt = {
-        where: function where (opt) {
-            return find(Object.entries(opt).reduce((prev, [key, match]) => {
-                return prev.filter(curr => {
-                    return match.test(curr[key])
-                })
-            }, this))
+const find = (data) => {
+    let dealFun = {
+        where () {
+            return this.returnVal({})
         },
-        orderBy: function order (key, type) {
-            return this.sort((prev, next) => {
-                switch (type) {
-                    case 'desc':
-                        return next - prev
-                    case 'asc':
-                        return prev - next
-                    default:
-                        return prev - next
-                }
-            })
+        orderBy () {
+            return this.returnVal({})
+        },
+        find() {
+            return this.returnVal({})
+        },
+        returnVal (obj) {
+            Object.setPrototypeOf(obj, dealFun)
+            return obj
         }
     }
-    Object.setPrototypeOf(opt, Array.prototype)
-    Object.setPrototypeOf(temp, opt)
-    return temp
+    Object.setPrototypeOf(data, dealFun)
+    return data.find()
 }
+find(data).where({ title: 123 }).orderBy('userId', '123')
 
 
 ```
+
+find返回实际就是返回一个携带这些方法的对象 每次处理后挂载方法返回 
