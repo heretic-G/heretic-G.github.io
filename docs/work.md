@@ -17,17 +17,17 @@
 - declarationInstantiation后半部分梳理完成(已经好几遍了 后面的设计环境记录项的创建和部分附录兼容真的难理解 还需要基于几道题去梳理下)
 - piano 完成一部分了(可以先搞定基础的UI和对应的声音创建)
 - service worker的更新后半段的想法还没实现
-- 
+- token 刷新方案
+- 手写题 addClass  
+- useInterval
 
 #### 2021-12-06
 
-var let const 的差异
-
-Reflect对于this变更后的还原 和set可以返回设置结果
-
-list列表底部监听然后触发逻辑可用方案
-
-webpack 基本的配置项
+- var let const 的差异
+- Reflect对于this变更后的还原 和set可以返回设置结果
+- list列表底部监听然后触发逻辑可用方案
+- webpack 基本的配置项
+- 手写 LRU memorize
 
 ---
 
@@ -35,28 +35,22 @@ webpack 基本的配置项
 
 #### 2021-11-29
 
-看了tls里面的RAS和ECDHE的基本流程
-
-service worker 切换demo和基本生命周期
-
-p标签被分割
-
-简单的防止事件触发api
+- 看了tls里面的RAS和ECDHE的基本流程
+- service worker 切换demo和基本生命周期
+- p标签被分割
+- 简单的防止事件触发api
 
 #### 2021-11-22
 
-完成lc计划 完成ts计划 优化了2个demo 很早期的mosaic和pageLoading
+- 完成lc计划 完成ts计划 优化了2个demo 很早期的mosaic和pageLoading
+- 翻规范看了 transition的逻辑 
+- 浏览器输入url后发生了什么起了个开头
+- 基本缓存看了下
 
-翻规范看了 transition的逻辑 
-
-浏览器输入url后发生了什么起了个开头
-
-基本缓存看了下
-
-(+需要每日记录 不要等到每周最后在记录 很多信息会忘记)
+- (+需要每日记录 不要等到每周最后在记录 很多信息会忘记)
 
 ---
 
 #### 完成列表
 
-
+- 手写 LRU memorize (2021-12-10)
