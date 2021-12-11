@@ -117,6 +117,7 @@
   * [136-只出现一次的数字](leetcode/array/136-只出现一次的数字.md)
   * [496-下一个更大元素I](leetcode/array/496-下一个更大元素I.md)
   * [面试题-17.09-第k个数](leetcode/array/面试题-17.09-第k个数.md)
+  * [860-柠檬水找零](leetcode/array/860-柠檬水找零.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
