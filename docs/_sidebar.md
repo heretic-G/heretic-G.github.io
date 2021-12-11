@@ -116,7 +116,7 @@
   * [794-有效的井字游戏](leetcode/array/794-有效的井字游戏.md)
   * [136-只出现一次的数字](leetcode/array/136-只出现一次的数字.md)
   * [496-下一个更大元素I](leetcode/array/496-下一个更大元素I.md)
-  * [215-数组中的第K个最大元素](leetcode/array/215-数组中的第K个最大元素.md)
+  * [面试题-17.09-第k个数](leetcode/array/面试题-17.09-第k个数.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
@@ -176,7 +176,11 @@
   * [870-优势洗牌](leetcode/greedy/870-优势洗牌.md)
 
   [comment]: <> (  graph)
-  * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)    
+  * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)
+
+  [//]: # (  heap)
+
+  * [215-数组中的第K个最大元素](leetcode/heap/215-数组中的第K个最大元素.md)
 
 * [learn](learn/README.md)
 
