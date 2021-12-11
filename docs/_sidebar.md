@@ -145,6 +145,7 @@
   * [1816-截断句子](leetcode/string/1816-截断句子.md)
   * [383-赎金信](leetcode/string/383-赎金信.md)
   * [748-最短补全词](leetcode/string/748-最短补全词.md)
+  * [1021-删除最外层的括号](leetcode/string/1021-删除最外层的括号.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
