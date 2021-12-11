@@ -168,6 +168,7 @@
   * [504-七进制数](leetcode/number/504-七进制数.md)
   * [397-整数替换](leetcode/number/397-整数替换.md)
   * [202-快乐数](leetcode/number/202-快乐数.md)
+  * [633-平方数之和](leetcode/number/633-平方数之和.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
