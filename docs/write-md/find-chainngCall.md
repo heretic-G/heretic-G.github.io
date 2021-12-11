@@ -48,6 +48,35 @@ const find = (data) => {
 find(data).where({ title: 123 }).orderBy('userId', '123')
 
 
+// 简单的多属性排序
+function orderBy (...args) {
+    let type = args.pop()
+
+    data.sort((prev, next) => {
+        for (let i = 0;i < args.length; i++) {
+            if (prev !== next) {
+                let curr = args[i]
+                switch (type) {
+                    case 'desc':
+                        if (prev[curr] > next[curr]) {
+                            return -1
+                        } else {
+                            return 1
+                        }
+                    case 'asc':
+                        if (prev[curr] > next[curr]) {
+                            return 1
+                        } else {
+                            return -1
+                        }
+                }
+            }
+        }
+        return 0
+    })
+}
+
+
 ```
 
 find返回实际就是返回一个携带这些方法的对象 每次处理后挂载方法返回 

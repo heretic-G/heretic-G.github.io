@@ -38,7 +38,15 @@ LRU.prototype.set = function (key, value) {
 
 LRU.prototype.get = function (key) {
   if (this.cacheMap.has(key)) {
-    return this.cache[this.cacheMap.get(key)].value
+      let index = this.cacheMap.get(key)
+      let temp = this.cache[index]
+      for (let i = 1;i < index + 1; i++) {
+          this.cache[i] = this.cache[i - 1]
+          this.cacheMap.set(this.cache[i].key, i)
+      }
+      this.cache[0] = temp
+      this.cacheMap.set(key, 0)
+      return temp.value
   }
   return undefined
 }
@@ -50,3 +58,37 @@ LRU.prototype.get = function (key) {
 每次存在扔到最上面不存在扔到最上面
 
 超出的直接删除
+
+
+```javascript
+
+class LRU {
+    constructor(size) {
+        this.size = size
+        this.cache = new Map()
+    }
+
+    set (key, value) {
+        if (this.cache.has(key)) {
+            this.cache.delete(key)
+        } else {
+            if (this.size <= this.cache.size) {
+                this.cache.delete(this.cache.keys().next().value)
+            }
+        }
+        this.cache.set(key, value)
+    }
+    get (key) {
+        if (this.cache.has(key)) {
+            let value = this.cache.get(key)
+            this.cache.delete(key)
+            this.cache.set(key, value)
+            return value
+        }
+    }
+}
+
+
+```
+
+看到一个map方案 更简单
