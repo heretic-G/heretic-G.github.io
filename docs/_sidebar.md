@@ -81,6 +81,7 @@
   * [H-2828-ClassPublicKeys](typescript/H-2828-ClassPublicKeys.md)
   * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
   * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)  
+  * [H-4037-IsPalindrome](typescript/H-4037-IsPalindrome.md)
   
   
 * [leetcode](leetcode/README.md)
