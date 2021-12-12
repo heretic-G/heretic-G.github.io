@@ -119,6 +119,7 @@
   * [496-下一个更大元素I](leetcode/array/496-下一个更大元素I.md)
   * [面试题-17.09-第k个数](leetcode/array/面试题-17.09-第k个数.md)
   * [860-柠檬水找零](leetcode/array/860-柠檬水找零.md)
+  * [34-在排序数组中查找元素的第一个和最后一个位置](leetcode/array/34-在排序数组中查找元素的第一个和最后一个位置.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
@@ -134,6 +135,7 @@
   * [112-路径总和](leetcode/BinaryTree/112-路径总和.md)
   * [257-二叉树的所有路径](leetcode/BinaryTree/257-二叉树的所有路径.md)
   * [236-二叉树的最近公共祖先](leetcode/BinaryTree/236-二叉树的最近公共祖先.md)
+  * [110-平衡二叉树](leetcode/BinaryTree/110-平衡二叉树.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -148,6 +150,7 @@
   * [748-最短补全词](leetcode/string/748-最短补全词.md)
   * [1021-删除最外层的括号](leetcode/string/1021-删除最外层的括号.md)
   * [709-转换成小写字母](leetcode/string/709-转换成小写字母.md)
+  * [415-字符串相加](leetcode/string/415-字符串相加.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
@@ -171,6 +174,7 @@
   * [397-整数替换](leetcode/number/397-整数替换.md)
   * [202-快乐数](leetcode/number/202-快乐数.md)
   * [633-平方数之和](leetcode/number/633-平方数之和.md)
+  * [693-交替位二进制数](leetcode/number/693-交替位二进制数.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
