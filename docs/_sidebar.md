@@ -120,6 +120,7 @@
   * [面试题-17.09-第k个数](leetcode/array/面试题-17.09-第k个数.md)
   * [860-柠檬水找零](leetcode/array/860-柠檬水找零.md)
   * [34-在排序数组中查找元素的第一个和最后一个位置](leetcode/array/34-在排序数组中查找元素的第一个和最后一个位置.md)
+  * [146-LRU缓存机制](leetcode/array/146-LRU缓存机制.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
