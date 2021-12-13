@@ -153,7 +153,7 @@
   * [1021-删除最外层的括号](leetcode/string/1021-删除最外层的括号.md)
   * [709-转换成小写字母](leetcode/string/709-转换成小写字母.md)
   * [415-字符串相加](leetcode/string/415-字符串相加.md)
-  * [17-电话号码的字母组合](leetcode/stack/17-电话号码的字母组合.md)
+  * [17-电话号码的字母组合](leetcode/string/17-电话号码的字母组合.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
@@ -193,11 +193,11 @@
   [comment]: <> (  graph)
   * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)
 
-  [//]: # (  heap)
+  [comment]: <> (  heap)
 
   * [215-数组中的第K个最大元素](leetcode/heap/215-数组中的第K个最大元素.md)
 
-  [//]: # (  stack)
+  [comment]: <> (  stack)
 
   * [739-每日温度](leetcode/stack/739-每日温度.md)
 
