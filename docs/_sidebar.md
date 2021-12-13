@@ -178,6 +178,7 @@
   * [633-平方数之和](leetcode/number/633-平方数之和.md)
   * [693-交替位二进制数](leetcode/number/693-交替位二进制数.md)
   * [172-阶乘后的零](leetcode/number/172-阶乘后的零.md)
+  * [204-计数质数](leetcode/number/204-计数质数.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
