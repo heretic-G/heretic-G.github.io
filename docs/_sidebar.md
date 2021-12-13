@@ -153,11 +153,13 @@
   * [1021-删除最外层的括号](leetcode/string/1021-删除最外层的括号.md)
   * [709-转换成小写字母](leetcode/string/709-转换成小写字母.md)
   * [415-字符串相加](leetcode/string/415-字符串相加.md)
+  * [17-电话号码的字母组合](leetcode/stack/17-电话号码的字母组合.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
   * [2-两数相加](leetcode/chain/2-两数相加.md)
+  * [19-删除链表的倒数第N个结点](leetcode/chain/19-删除链表的倒数第N个结点.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
