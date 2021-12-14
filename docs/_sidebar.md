@@ -138,6 +138,7 @@
   * [236-二叉树的最近公共祖先](leetcode/BinaryTree/236-二叉树的最近公共祖先.md)
   * [110-平衡二叉树](leetcode/BinaryTree/110-平衡二叉树.md)
   * [144-二叉树的前序遍历](leetcode/BinaryTree/144-二叉树的前序遍历.md)
+  * [530-二叉搜索树的最小绝对差](leetcode/BinaryTree/530-二叉搜索树的最小绝对差.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
