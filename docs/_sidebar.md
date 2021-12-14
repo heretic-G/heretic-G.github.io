@@ -121,6 +121,7 @@
   * [860-柠檬水找零](leetcode/array/860-柠檬水找零.md)
   * [34-在排序数组中查找元素的第一个和最后一个位置](leetcode/array/34-在排序数组中查找元素的第一个和最后一个位置.md)
   * [146-LRU缓存机制](leetcode/array/146-LRU缓存机制.md)
+  * [566-重塑矩阵](leetcode/array/566-重塑矩阵.md)
 
   [comment]: <> (    binaryTree)
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
