@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <p draggable="true">asdasdasdasd</p>
+    <img draggable="true" src="./img.png" alt="">
+</div>
+<script>
+
+    function randomColor() {
+        var color = "#";
+        for (var i = 0; i < 6; i++) color+=parseInt(Math.random() * 16).toString(16);
+        return color;
+    }
+    setInterval(() => {
+        let el = document.querySelector('p')
+        el.style.color = randomColor()
+    }, 1000)
+
+
+    var _img = new Image();
+    _img.src = './a.png';
+    let _node
+    let img = document.querySelector('img')
+    let x
+    let y
+    img.addEventListener('dragstart', function (event) {
+        _node = event.target.cloneNode(true)
+        _node.style.position = 'absolute'
+        document.body.appendChild(_node)
+        event.dataTransfer.setDragImage(_img, 2000, 2000);
+        x = event.pageX
+        y = event.pageY
+    })
+    img.addEventListener('drag', function (e) {
+        _node.style.left = x + 'px'
+        _node.style.top = y + 'px'
+        x = event.pageX
+        y = event.pageY
+    })
+    img.addEventListener('dragleave', function () {
+        console.log(123)
+    })
+    img.addEventListener('dragend', function (e) {
+        console.log(1)
+        _node.remove()
+    })
+</script>
+</body>
+</html>

@@ -67,3 +67,10 @@
     其实如果可以改动的大一些就是做个绑定逻辑el、clickFun 返回一个set disabled set loading的对象 clickfun内返回promise 在promise上挂finally 
     disabeld设置为false 解除disanled 点击后变为loading 禁止点击在clickfun的finally里面在恢复非loaidng
     类似react或者vue的组件这里只是封装的逻辑
+
+[draggable中拖拽元素不存在透明效果](https://heretic-g.github.io/draggable/index.html)
+
+    拖拽中 浏览器会默认设置原有的为img 这里的透明度是不可以设置的 也就是比如默认是存在0.8的浏览器设置透明 你只能在此基础上去增加透明值
+    而不能去在减少 所以这里我直接使用了一个透明的最小图片(其实就是白色的 我懒得找个透明的) 需要提前加载好 然后在拖拽的时候直接clone dom
+    和鼠标保持一致 这里有个坑在于最后end的会设置个0 0 所以为了防止这个浏览器效果 我这里进行了一次x y的后移 也就是每次存一个 新的来了 设置老的 存新的
+    就能够处理掉这个逻辑 以前没有接触过这个 也算是熟悉了下

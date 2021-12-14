@@ -52,3 +52,25 @@
     马赛克生成是实时算的 这里其实算的范围小 也可以换一种方式 一次生成完整的马赛克图片 马赛克其实就是展示对应的马赛克图片的opacity为1 
     这里的问题在于一次生成会造成堵塞感 需要切小片 分片计算 如果在未生成完整的时候操作马赛克 已生成区域直接展示 未生成区域 直接按照对应分块生成
     这里有个性能在于可能需要的区域小于很多要实际生成的区域 所以这里需要尝试下分块大小的不同实际体感 尤其是低性能端
+
+
+[简单的限制请求+loading](https://heretic-g.github.io/limitApi/index.html)
+
+    这是一个zepto的项目 初始是想要不大改或者在业务这边在增加很多重复代码的情况
+    实现api的loading效果(具体的UI原本没打算在这里的后来想了想就直接也仍在这里了)
+    具体逻辑就是在一个btn上增加一个tag 在点击的捕获和冒泡都在document增加绑定
+    一次点击触发的fetch会基于参数生成唯一key然后产生一个自增的id 有个全局参数是activeKey
+    累次都是累加上去(主要是为了一个click触发多个fetch 然后在冒泡的document会消费掉这个activeKey获取到所有的id 增加一个tag到dom)
+    每个fetch回来会清除掉对应id的 一个组合都回来会清除对应key的tag document这里进来目标是btn看下有标志吗 有就直接取消冒泡...
+    处理最后有个逻辑问题是无法获取click触发的异步逻辑
+
+    其实如果可以改动的大一些就是做个绑定逻辑el、clickFun 返回一个set disabled set loading的对象 clickfun内返回promise 在promise上挂finally 
+    disabeld设置为false 解除disanled 点击后变为loading 禁止点击在clickfun的finally里面在恢复非loaidng
+    类似react或者vue的组件这里只是封装的逻辑
+
+[draggable中拖拽元素不存在透明效果](https://heretic-g.github.io/draggable/index.html)
+
+    拖拽中 浏览器会默认设置原有的为img 这里的透明度是不可以设置的 也就是比如默认是存在0.8的浏览器设置透明 你只能在此基础上去增加透明值
+    而不能去在减少 所以这里我直接使用了一个透明的最小图片(其实就是白色的 我懒得找个透明的) 需要提前加载好 然后在拖拽的时候直接clone dom
+    和鼠标保持一致 这里有个坑在于最后end的会设置个0 0 所以为了防止这个浏览器效果 我这里进行了一次x y的后移 也就是每次存一个 新的来了 设置老的 存新的
+    就能够处理掉这个逻辑 以前没有接触过这个 也算是熟悉了下
