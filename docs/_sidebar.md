@@ -82,6 +82,9 @@
   * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
   * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)  
   * [H-4037-IsPalindrome](typescript/H-4037-IsPalindrome.md)
+
+
+  * [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
   
   
 * [leetcode](leetcode/README.md)
