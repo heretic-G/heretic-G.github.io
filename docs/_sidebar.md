@@ -246,5 +246,6 @@
   * [null和undefined的区别](learn/null和undefined的区别.md)
   * [下载中存在非安全路径](learn/下载中存在非安全路径.md)
   * [npm的几个依赖属性](learn/npm的几个依赖属性.md)
+  * [二进制计算平均值](learn/二进制计算平均值.md)
   
 * [demo](example/README.md)
