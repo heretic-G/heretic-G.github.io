@@ -85,6 +85,7 @@
 
 
   * [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
+  * [X-216-Slice](typescript/X-216-Slice.md)
   
   
 * [leetcode](leetcode/README.md)
