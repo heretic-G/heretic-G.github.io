@@ -162,6 +162,7 @@
   * [415-字符串相加](leetcode/string/415-字符串相加.md)
   * [17-电话号码的字母组合](leetcode/string/17-电话号码的字母组合.md)
   * [22-括号生成](leetcode/string/22-括号生成.md)
+  * [1154-一年中的第几天](leetcode/string/1154-一年中的第几天.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
