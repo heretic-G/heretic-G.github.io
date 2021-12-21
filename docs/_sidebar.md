@@ -213,6 +213,7 @@
   [comment]: <> (  stack)
 
   * [739-每日温度](leetcode/stack/739-每日温度.md)
+  * [503-下一个更大元素II](leetcode/stack/503-下一个更大元素II.md)
 
 * [learn](learn/README.md)
 
