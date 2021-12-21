@@ -39,6 +39,7 @@
   * [typeof-enum](typescript/typeof-enum.md)
   * [UnionToIntersection](typescript/UnionToIntersection.md)
   * [GenericTypes](typescript/GenericTypes.md)
+  * [实现类似const的效果](typescript/实现类似const的效果.md)
 
   * [2070-Drop Char](typescript/2070.md)
   * [1130-ReplaceKeys](typescript/1130.md)
@@ -167,6 +168,8 @@
   * [chain/offer-52](leetcode/chain/offer-52.md)
   * [2-两数相加](leetcode/chain/2-两数相加.md)
   * [19-删除链表的倒数第N个结点](leetcode/chain/19-删除链表的倒数第N个结点.md)
+  * [21-合并两个有序链表](leetcode/chain/21-合并两个有序链表.md)
+  * [382-链表随机节点](leetcode/chain/382-链表随机节点.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
