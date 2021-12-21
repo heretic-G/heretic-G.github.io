@@ -205,6 +205,7 @@
   [comment]: <> (  graph)
   * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)
   * [419-甲板上的战舰](leetcode/graph/419-甲板上的战舰.md)
+  * [797-所有可能的路径](leetcode/graph/797-所有可能的路径.md)
 
   [comment]: <> (  heap)
 
