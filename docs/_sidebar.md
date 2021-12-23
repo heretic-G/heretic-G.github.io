@@ -258,5 +258,6 @@
   * [npm的几个依赖属性](learn/npm的几个依赖属性.md)
   * [二进制计算平均值](learn/二进制计算平均值.md)
   * [NAT穿透](learn/NAT穿透.md)
+  * [cache](learn/cache.md)
   
 * [demo](example/README.md)
