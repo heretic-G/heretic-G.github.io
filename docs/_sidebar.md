@@ -207,6 +207,8 @@
   * [419-甲板上的战舰](leetcode/graph/419-甲板上的战舰.md)
   * [797-所有可能的路径](leetcode/graph/797-所有可能的路径.md)
   * [207-课程表](leetcode/graph/207-课程表.md)
+  * [210-课程表II](leetcode/graph/210-课程表II.md)
+  * [785-判断二分图](leetcode/graph/785-判断二分图.md)
 
   [comment]: <> (  heap)
 
