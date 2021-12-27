@@ -268,5 +268,6 @@
   * [cache](learn/cache.md)
   * [Object-keys](learn/Object-keys.md)
   * [获取本机地址](learn/获取本机地址.md)
+  * [rest-spread](learn/rest-spread.md)
   
 * [demo](example/README.md)
