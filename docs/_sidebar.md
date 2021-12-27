@@ -40,6 +40,7 @@
   * [UnionToIntersection](typescript/UnionToIntersection.md)
   * [GenericTypes](typescript/GenericTypes.md)
   * [实现类似const的效果](typescript/实现类似const的效果.md)
+  * [基于奇偶来输出不同的数据结构](typescript/基于奇偶来输出不同的数据结构.md)
 
   * [2070-Drop Char](typescript/2070.md)
   * [1130-ReplaceKeys](typescript/1130.md)
