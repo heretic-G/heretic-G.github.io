@@ -1,3 +1,15 @@
+
+
+
+
+协变与逆变（Covariance and contravariance）是在计算机科学中，
+
+描述具有父/子类型关系的多个类型通过类型构造器、构造出的多个复杂类型之间是否有父/子型别关系的用语。
+
+
+
+
+
 记录一些遇到的情况和笔记
 
 一个很有意思的图 [图片地址](https://gist.github.com/laughinghan/31e02b3f3b79a4b1d58138beff1a2a89)
@@ -89,3 +101,16 @@ function b<T> (args: T) {
 a(null)
 
 ```
+
+
+---
+
+泛型推导 + 可选 + 修改key 会导致 ts解析从第二属性开始不做提示信息展示
+
+
+
+
+naked params 的分发行为中 naked是一个语义上的行为 而不是一个语法上的行为 这个行为是会做一些简单的推断的 也就是
+
+
+[Non-naked type parameter match still has distributive behavior](https://github.com/microsoft/TypeScript/issues/43727)
