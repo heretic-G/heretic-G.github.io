@@ -32,6 +32,7 @@
 
 * [react](react/README.md)
   * [key](react/key.md)
+  * [keep-alive](react/keep-alive.md)
 
 * [typescript](typescript/README.md)
 
