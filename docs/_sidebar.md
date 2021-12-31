@@ -274,5 +274,5 @@
   * [获取本机地址](learn/获取本机地址.md)
   * [rest-spread](learn/rest-spread.md)
   * [cdn的基本概念和流程](learn/cdn的基本概念和流程.md)
-  
+  * [浏览器指纹](learn/浏览器指纹.md)
 * [demo](example/README.md)
