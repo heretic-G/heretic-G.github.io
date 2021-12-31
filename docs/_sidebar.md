@@ -168,6 +168,7 @@
   * [17-电话号码的字母组合](leetcode/string/17-电话号码的字母组合.md)
   * [22-括号生成](leetcode/string/22-括号生成.md)
   * [1154-一年中的第几天](leetcode/string/1154-一年中的第几天.md)
+  * [686-重复叠加字符串匹配](leetcode/string/686-重复叠加字符串匹配.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
