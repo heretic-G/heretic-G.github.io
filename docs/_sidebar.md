@@ -199,6 +199,8 @@
   * [172-阶乘后的零](leetcode/number/172-阶乘后的零.md)
   * [204-计数质数](leetcode/number/204-计数质数.md)
   * [1518-换酒问题](leetcode/number/1518-换酒问题.md)
+  * [l-1-A+b问题](leetcode/number/l-1-A+b问题.md)
+  * [l-37-反转一个三位整数](leetcode/number/l-37-反转一个三位整数.md)
 
   * [greedy/435](leetcode/greedy/435.md)
   * [greedy/455](leetcode/greedy/455.md)
