@@ -180,6 +180,7 @@
   * [l-1609-链表的中间结点](leetcode/chain/l-1609-链表的中间结点.md)
   * [l-35-翻转链表](leetcode/chain/l-35-翻转链表.md)
   * [141-环形链表](leetcode/chain/141-环形链表.md)
+  * [142-环形链表II](leetcode/chain/142-环形链表II.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
