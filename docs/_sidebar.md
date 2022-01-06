@@ -181,6 +181,11 @@
   * [l-35-翻转链表](leetcode/chain/l-35-翻转链表.md)
   * [141-环形链表](leetcode/chain/141-环形链表.md)
   * [142-环形链表II](leetcode/chain/142-环形链表II.md)
+  * [24-两两交换链表中的节点](leetcode/chain/24-两两交换链表中的节点.md)
+  * [83-删除排序链表中的重复元素](leetcode/chain/83-删除排序链表中的重复元素.md)
+  * [206-反转链表](leetcode/chain/206-反转链表.md)
+  * [234-回文链表](leetcode/chain/234-回文链表.md)
+  * [328-奇偶链表](leetcode/chain/328-奇偶链表.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
