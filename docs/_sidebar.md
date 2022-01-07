@@ -187,6 +187,8 @@
   * [234-回文链表](leetcode/chain/234-回文链表.md)
   * [328-奇偶链表](leetcode/chain/328-奇偶链表.md)
   * [148-排序链表](leetcode/chain/148-排序链表.md)
+  * [930-链表中的连通分量](leetcode/chain/930-链表中的连通分量.md)
+  * [904-加一链表](leetcode/chain/904-加一链表.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
