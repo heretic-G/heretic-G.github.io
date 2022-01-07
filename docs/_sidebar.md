@@ -186,6 +186,7 @@
   * [206-反转链表](leetcode/chain/206-反转链表.md)
   * [234-回文链表](leetcode/chain/234-回文链表.md)
   * [328-奇偶链表](leetcode/chain/328-奇偶链表.md)
+  * [148-排序链表](leetcode/chain/148-排序链表.md)
     
   [comment]: <> (dp)
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
