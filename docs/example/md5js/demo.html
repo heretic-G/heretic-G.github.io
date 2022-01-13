@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/hash-wasm@4/dist/md5.umd.min.js"></script>
+</head>
+<body>
+<input type="file">
+<button id="calculate">完整计算md5</button>
+<script>
+    let btn = document.querySelector('#calculate')
+    const fileEl = document.querySelector('input')
+    btn.addEventListener('click', function () {
+        console.time('md5')
+        const fileReader = new FileReader()
+        fileReader.addEventListener('loadend', async (e) => {
+            let md5 = await hashwasm.createMD5()
+            const view = new Uint8Array(e.target.result);
+            md5.update(view)
+            console.log(md5.digest())
+            console.timeEnd('md5')
+        })
+        fileReader.readAsArrayBuffer(fileEl.files[0])
+    })
+</script>
+</body>
+</html>

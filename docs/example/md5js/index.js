@@ -4,6 +4,7 @@
 
 const btn = document.querySelector('#calculate')
 const workerBtn = document.querySelector('#webWorker')
+const workerWasmBtn = document.querySelector('#webWorkerWasm')
 const fileEl = document.querySelector('input')
 const addIdEl = document.querySelector('#addId')
 const step = 5 * 1024 * 1024
@@ -17,6 +18,14 @@ setInterval(() => {
 }, 1000)
 
 workerBtn.addEventListener('click', function () {
+    workerMd5('worker')
+})
+
+workerWasmBtn.addEventListener('click', function () {
+    workerMd5('workerWasm')
+})
+
+function workerMd5 (name) {
     console.time('worker')
     const arr = Array(Math.ceil(fileEl.files[0].size / step))
     const workerFreeSet = new Set()
@@ -26,7 +35,7 @@ workerBtn.addEventListener('click', function () {
     let success = -1
     let readSuccess = false
     for (let i = 0; i < workerLimit; i++) {
-        let worker = new Worker('./worker.js')
+        let worker = new Worker(`./${name}.js`)
         workerFreeSet.add(worker)
         worker.addEventListener('message', function (e) {
             success += 1
@@ -36,6 +45,9 @@ workerBtn.addEventListener('click', function () {
             if (readSuccess && success === index) {
                 let all = new SparkMD5()
                 all.append(arr.join(''))
+                workerFreeSet.forEach(curr => {
+                    curr.terminate()
+                })
                 console.log(all.end())
                 console.timeEnd('worker')
             }
@@ -67,7 +79,7 @@ workerBtn.addEventListener('click', function () {
             }, [buffer])
         }
     }
-})
+}
 
 
 btn.addEventListener('click', function () {
