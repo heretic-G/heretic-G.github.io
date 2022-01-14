@@ -291,4 +291,5 @@
   * [cdn的基本概念和流程](learn/cdn的基本概念和流程.md)
   * [浏览器指纹](learn/浏览器指纹.md)
   * [web安全](learn/web安全.md)
+  * [webworker](learn/webworker.md)
 * [demo](example/README.md)
