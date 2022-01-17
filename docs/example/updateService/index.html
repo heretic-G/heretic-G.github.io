@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  navigator.serviceWorker.register('./serviceWorker.js', {scope: './'})
+    .then(function (registration) {
+      navigator.serviceWorker.ready.then(register => {
+        register.onupdatefound = function () {
+          if (register.installing) {
+            let newService = register.installing
+            newService.onstatechange = function () {
+              switch (newService.state) {
+                case 'installed':
+                  confirmUserToUpdate(newService)
+              }
+            }
+          }
+        }
+        if (register.waiting) {
+          confirmUserToUpdate(register.waiting)
+        }
+      })
+    })
+
+  function confirmUserToUpdate (newService) {
+    let result = confirm('有新的更新！')
+    if (result) {
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload()
+      })
+      newService.postMessage({
+        type: 'allowUpdate'
+      })
+    }
+  }
+</script>
+</body>
+</html>
