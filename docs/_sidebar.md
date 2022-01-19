@@ -34,6 +34,7 @@
 * [react](react/README.md)
   * [key](react/key.md)
   * [keep-alive](react/keep-alive.md)
+  * [React-StrictMode](react/React-Strictmode.md)
 
 * [typescript](typescript/README.md)
 
