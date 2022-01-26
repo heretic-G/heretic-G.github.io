@@ -35,6 +35,7 @@
   * [key](react/key.md)
   * [keep-alive](react/keep-alive.md)
   * [React-StrictMode](react/React-Strictmode.md)
+  * [简单的权限控制demo](react/权限控制.md)
 
 * [typescript](typescript/README.md)
 
@@ -157,6 +158,7 @@
   * [235-二叉搜索树的最近公共祖先](leetcode/BinaryTree/235-二叉搜索树的最近公共祖先.md)
   * [572-另一棵树的子树](leetcode/BinaryTree/572-另一棵树的子树.md)
   * [617-合并二叉树](leetcode/BinaryTree/617-合并二叉树.md)
+  * [669-修剪二叉搜索树](leetcode/BinaryTree/669-修剪二叉搜索树.md)
   
   [comment]: <> (  trie)
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -206,6 +208,11 @@
   * [dp/213-打家劫舍II](leetcode/dp/213-打家劫舍II.md)
   * [dp/313-超级丑数](leetcode/dp/313-超级丑数.md)
   * [dp/64-最小路径和](leetcode/dp/64-最小路径和.md)
+  * [337-打家劫舍III](leetcode/dp/337-打家劫舍III.md)
+  * [343-整数拆分](leetcode/dp/343-整数拆分.md)
+  * [376-摆动序列](leetcode/dp/376-摆动序列.md)
+  * [413-等差数列划分](leetcode/dp/413-等差数列划分.md)
+  * [650-只有两个键的键盘](leetcode/dp/650-只有两个键的键盘.md)
   
   [comment]: <> (  number)
   * [69-Sqrt(x)](leetcode/number/69-Sqrt(x).md)
