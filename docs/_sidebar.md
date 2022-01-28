@@ -36,6 +36,7 @@
   * [keep-alive](react/keep-alive.md)
   * [React-StrictMode](react/React-Strictmode.md)
   * [简单的权限控制demo](react/权限控制.md)
+  * [scheduler](react/scheduler.md)
 
 * [typescript](typescript/README.md)
 
