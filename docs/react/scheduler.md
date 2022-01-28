@@ -113,3 +113,7 @@ schedulePerformWorkUntilDeadline 控制权交出的fun 优先SetImmediate > Mess
 isMessageLoopRunning 是不是有任务在跑
 
 scheduledHostCallback 实际这里的callback 就是flushWork
+
+
+[图片来自于](https://www.yuque.com/docs/share/8c167e39-1f5e-4c6d-8004-e57cf3851751)
+![img.png](img.png)
