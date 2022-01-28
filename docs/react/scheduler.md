@@ -23,7 +23,61 @@ var newTask = {
 
 如果只存在延时任务 会设置一个延时定时 到时间后会把到期延时尽可能多的往task中扔 
 
-如果task存在任务 并且当前没有运行任务 scheduledHostCallback 赋值任务 然后一个deadLine 直接运行
+如果task存在任务 并且当前没有运行任务 scheduledHostCallback为flushWork 然后一个deadLine 直接开启workLoop
+那这里重点就是workLoop
+```javascript
+function workLoop(hasTimeRemaining, initialTime) {
+  let currentTime = initialTime;
+  advanceTimers(currentTime); // 延时任务到期扔到task
+  currentTask = peek(taskQueue); 取出最上面的
+  while (
+    currentTask !== null &&
+    !(enableSchedulerDebugging && isSchedulerPaused)
+  ) {
+    if (
+      currentTask.expirationTime > currentTime &&
+      (!hasTimeRemaining || shouldYieldToHost())
+    ) {
+      // 任务没过期需要断开
+      break;
+    }
+    // 如果不存在callback 直接说明上次跑完了 
+    const callback = currentTask.callback;
+    if (typeof callback === 'function') {
+      // 存在callback说明是需要继续的
+      currentTask.callback = null;
+      currentPriorityLevel = currentTask.priorityLevel;
+      const didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
+      // 算下时间 继续跑
+      const continuationCallback = callback(didUserCallbackTimeout);
+      currentTime = getCurrentTime();
+      // 还有fun就是没跑完 没跑完 存起来 跑完直接扔掉task
+      if (typeof continuationCallback === 'function') {
+        currentTask.callback = continuationCallback;
+      } else {
+        if (currentTask === peek(taskQueue)) {
+          pop(taskQueue);
+        }
+      }
+      advanceTimers(currentTime);
+    } else {
+      pop(taskQueue);
+    }
+    currentTask = peek(taskQueue);
+  }
+  // 无论是当前没跑完还是task还存在任务都是true 这里会交出控制前到host上
+  if (currentTask !== null) {
+    return true;
+  } else {
+    const firstTimer = peek(timerQueue);
+    if (firstTimer !== null) {
+      requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+    }
+    return false;
+  }
+}
+```
+这里有一个点是task需要自己存在中断去做返回 不然loop也抢不走
 
 在运行的时候会记录运行开始时间 然后去比对 这里比对存在4个值 
 
@@ -42,9 +96,9 @@ frameInterval continuousInputInterval maxInterval needsPaint
 
 看下几个重点的fun
 
-flushWork 开启运行work的循环
+flushWork 开启刷出work
 
-workLoop 这里是决定还有没有任务 怎么去运行 运行谁的
+workLoop 这里是决定运行谁 是不是要跳出 
 
 advanceTimers 把timer 扔到task
 
