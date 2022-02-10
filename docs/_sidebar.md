@@ -95,6 +95,7 @@
   * [X-216-Slice](typescript/X-216-Slice.md)
 
   * [基于id过滤数组](typescript/基于id过滤数组.md)
+  * [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
   
   
 * [leetcode](leetcode/README.md)
