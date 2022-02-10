@@ -93,6 +93,8 @@
 
   * [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
   * [X-216-Slice](typescript/X-216-Slice.md)
+
+  * [基于id过滤数组](typescript/基于id过滤数组.md)
   
   
 * [leetcode](leetcode/README.md)
@@ -179,6 +181,7 @@
   * [22-括号生成](leetcode/string/22-括号生成.md)
   * [1154-一年中的第几天](leetcode/string/1154-一年中的第几天.md)
   * [686-重复叠加字符串匹配](leetcode/string/686-重复叠加字符串匹配.md)
+  * [剑指Offer48-最长不含重复字符的子字符串](leetcode/string/剑指Offer48-最长不含重复字符的子字符串.md)
     
   [comment]: <> (chain )
   * [chain/138](leetcode/chain/138.md)
