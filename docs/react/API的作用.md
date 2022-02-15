@@ -1,0 +1,8 @@
+大多数我们使用的hook都是在ReactFiberHooks.new.js中2000多行这里 在根据不同的逻辑和参数 初始化不同的方法
+
+useEffect 这里分成2个阶段 一个是mount 一个是update
+
+在mount是 mountEffectImpl他做了
+- 在fiber中的memoizedState中创建了一个新的hook
+- 然后调用了pushEffect 挂载到hook的memoizedState上 一个effect 然后在updateQueue中增加一个 lastEffect
+
