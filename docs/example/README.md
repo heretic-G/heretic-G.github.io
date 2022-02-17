@@ -34,7 +34,7 @@
 
     和上面的demo一样 这个只能选择一个文件会自动保存(就是操作间隔300ms)
 
-[处理输入框的中文展示和过滤](https://heretic-g.github.io/inputShowAndLimit/index.html)
+[处理输入框的中文展示和过滤](https://heretic-g.github.io/example/inputShowAndLimit/index.html)
 
     如果抓input事件这里其实在中文或者合成的时候都会得到中间态的内容
     在此基础上面处理掉这个状态的值 只展示期望展示的值
@@ -42,7 +42,7 @@
     如果增加了没变化不处理 其实在非法值得时候也会导致退出输入法的状态 所以这里需要避开合成事件的节点
     期望react上的话 需要对接原生的event 不然如果使用受控组件这里在合成阶段 val不能变 不能变其实就是react给你设置了val会跳出来 需要手动封装一层
 
-[图片增加马赛克和水印](https://heretic-g.github.io/Mosaic/index.html)
+[图片增加马赛克和水印](https://heretic-g.github.io/example/Mosaic/index.html)
 
     基础的图片增加马赛克和水印功能  (水印不能增加多个)
     实际处理是4层canvas的结构
@@ -54,7 +54,7 @@
     这里有个性能在于可能需要的区域小于很多要实际生成的区域 所以这里需要尝试下分块大小的不同实际体感 尤其是低性能端
 
 
-[简单的限制请求+loading](https://heretic-g.github.io/limitApi/index.html)
+[简单的限制请求+loading](https://heretic-g.github.io/example/limitApi/index.html)
 
     这是一个zepto的项目 初始是想要不大改或者在业务这边在增加很多重复代码的情况
     实现api的loading效果(具体的UI原本没打算在这里的后来想了想就直接也仍在这里了)
@@ -68,15 +68,15 @@
     disabeld设置为false 解除disanled 点击后变为loading 禁止点击在clickfun的finally里面在恢复非loaidng
     类似react或者vue的组件这里只是封装的逻辑
 
-[draggable中拖拽元素不存在透明效果](https://heretic-g.github.io/draggable/index.html)
+[draggable中拖拽元素不存在透明效果](https://heretic-g.github.io/example/draggable/index.html)
 
     拖拽中 浏览器会默认设置原有的为img 这里的透明度是不可以设置的 也就是比如默认是存在0.8的浏览器设置透明 你只能在此基础上去增加透明值
     而不能去在减少 所以这里我直接使用了一个透明的最小图片(其实就是白色的 我懒得找个透明的) 需要提前加载好 然后在拖拽的时候直接clone dom
     和鼠标保持一致 这里有个坑在于最后end的会设置个0 0 所以为了防止这个浏览器效果 我这里进行了一次x y的后移 也就是每次存一个 新的来了 设置老的 存新的
     就能够处理掉这个逻辑 以前没有接触过这个 也算是熟悉了下
 
-[webWorker加速file的MD5计算和增加主线程的响应时间](https://heretic-g.github.io/md5js/index.html)
-    
+[webWorker加速file的MD5计算和增加主线程的响应时间](https://heretic-g.github.io/example/md5js/index.html)
+
     一个简单的demo依赖hardwareConcurrency去生成对应的worker 然后分片读取file 调用闲的worker去做md5计算返回对应的md5值
     在file这个demo中第一个好处是fileReader这里可以直接转为buffer 所以不需要在二次处理就扔下去而且buffer支持直接转走
     选择文件后点击按钮会在控制台之后打印算出来的md5和运行时间 这里没有一次readFile和md5的demo 感觉没人会这样干...
