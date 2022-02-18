@@ -97,8 +97,7 @@
   
 * [leetcode](leetcode/README.md)
   
-  [//]: # (  [comment]: <> &#40;  array &#41;)
-
+  [//]: # (  array)
   * [17-10](leetcode/array/17-10.md)
   * [274](leetcode/array/274.md)
   * [1743](leetcode/array/1743.md)
@@ -138,7 +137,7 @@
   * [410-分割数组的最大值](leetcode/array/410-分割数组的最大值.md)
   * [154-寻找旋转排序数组中的最小值II](leetcode/array/154-寻找旋转排序数组中的最小值II.md)
 
-  [//]: # (  [comment]: <> &#40;    binaryTree&#41;)
+  [//]: # (  binaryTree)
 
   * [BinaryTree/671](leetcode/BinaryTree/671.md)
   * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
@@ -162,12 +161,12 @@
   * [572-另一棵树的子树](leetcode/BinaryTree/572-另一棵树的子树.md)
   * [617-合并二叉树](leetcode/BinaryTree/617-合并二叉树.md)
   * [669-修剪二叉搜索树](leetcode/BinaryTree/669-修剪二叉搜索树.md)
-  
-  [//]: # (  [comment]: <> &#40;  trie&#41;)
+
+  [//]: # (  trie)
   
   * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
 
-  [//]: # (  [comment]: <> &#40;    string&#41;)
+  [//]: # (  string)
   
   * [241-为运算表达式设计优先级](leetcode/string/241-为运算表达式设计优先级.md)
   * [859-亲密字符串](leetcode/string/859-亲密字符串.md)
@@ -184,8 +183,8 @@
   * [1154-一年中的第几天](leetcode/string/1154-一年中的第几天.md)
   * [686-重复叠加字符串匹配](leetcode/string/686-重复叠加字符串匹配.md)
   * [剑指Offer48-最长不含重复字符的子字符串](leetcode/string/剑指Offer48-最长不含重复字符的子字符串.md)
-    
-  [//]: # (  [comment]: <> &#40;chain &#41;)
+
+  [//]: # (  chain)
   
   * [chain/138](leetcode/chain/138.md)
   * [chain/offer-52](leetcode/chain/offer-52.md)
@@ -205,8 +204,8 @@
   * [148-排序链表](leetcode/chain/148-排序链表.md)
   * [930-链表中的连通分量](leetcode/chain/930-链表中的连通分量.md)
   * [904-加一链表](leetcode/chain/904-加一链表.md)
-    
-  [//]: # (  [comment]: <> &#40;dp&#41;)
+
+  [//]: # (  dp)
   
   * [dp/70-爬楼梯](leetcode/dp/70-爬楼梯.md)
   * [dp/509-斐波那契数](leetcode/dp/509-斐波那契数.md)
@@ -221,8 +220,8 @@
   * [376-摆动序列](leetcode/dp/376-摆动序列.md)
   * [413-等差数列划分](leetcode/dp/413-等差数列划分.md)
   * [650-只有两个键的键盘](leetcode/dp/650-只有两个键的键盘.md)
-  
-  [//]: # (  [comment]: <> &#40;  number&#41;)
+
+  [//]: # (  number)
   
   * [69-Sqrt(x)](leetcode/number/69-Sqrt(x).md)
   * [470-用Rand7()实现Rand10()](leetcode/number/470-用Rand7()实现Rand10().md)
@@ -245,7 +244,7 @@
   * [greedy/1877](leetcode/greedy/1877.md)
   * [870-优势洗牌](leetcode/greedy/870-优势洗牌.md)
 
-  [//]: # (  [comment]: <> &#40;  graph&#41;)
+  [//]: # (  graph)
   
   * [997-找到小镇的法官](leetcode/graph/997-找到小镇的法官.md)
   * [419-甲板上的战舰](leetcode/graph/419-甲板上的战舰.md)
@@ -258,11 +257,11 @@
   * [827-最大人工岛](leetcode/graph/827-最大人工岛.md)
   * [463-岛屿的周长](leetcode/graph/463-岛屿的周长.md)
 
-  [//]: # (  [comment]: <> &#40;  heap&#41;)
+  [//]: # (  heap)
 
   * [215-数组中的第K个最大元素](leetcode/heap/215-数组中的第K个最大元素.md)
 
-  [//]: # (  [comment]: <> &#40;  stack&#41;)
+  [//]: # (  stack)
 
   * [739-每日温度](leetcode/stack/739-每日温度.md)
   * [503-下一个更大元素II](leetcode/stack/503-下一个更大元素II.md)
