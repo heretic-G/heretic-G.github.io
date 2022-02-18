@@ -96,8 +96,9 @@
   * [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
   
 * [leetcode](leetcode/README.md)
-  
-  [//]: # (  array)
+
+  [comment]: <> (array)
+
   * [17-10](leetcode/array/17-10.md)
   * [274](leetcode/array/274.md)
   * [1743](leetcode/array/1743.md)
