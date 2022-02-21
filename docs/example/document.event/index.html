@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .aaa {
+            transform: rotate3d(1, 0, 0, 75deg);
+        }
+        .bb {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            animation: 3s linear infinite running slidein;
+        }
+        @keyframes slidein {
+            0% {
+                transform: rotate3d(0, 0, 0, 0);
+            }
+            100% {
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+        }
+        .aa {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: 10px;
+            width: 5px;
+            background-color: red;
+            transform-origin: top;
+            animation: 3s linear infinite running slideina;
+        }
+        @keyframes slideina {
+            0% {
+                transform: scale(1, 1.414213562);
+            }
+            25% {
+                transform: scale(1.414213562, 1);
+            }
+            50% {
+                transform: scale(1, 1.414213562);
+            }
+            75% {
+                transform: scale(1.414213562, 1);
+            }
+            100% {
+                transform: scale(1, 1.414213562);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="aaa">
+    <div class="bb">
+        <div class="aa"></div>
+    </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    console.log("初始DOM 加载并解析");
+  });
+  window.addEventListener("load", function (event) {
+    console.log("window 所有资源加载完成");
+  });
+
+  document.onreadystatechange = function () {
+    console.log(document.readyState)
+    if (document.readyState === "complete") {
+      console.log('初始DOM,加载解析完成')
+    }
+  }
+  window.addEventListener("beforeunload", function (event) {
+    console.log('即将关闭')
+    event.returnValue = "\o/";
+  });
+  window.addEventListener('unload', function (event) {
+    console.log('即将关闭1');
+  });
+</script>
+<script src="index.js"></script>
+</body>
+</html>

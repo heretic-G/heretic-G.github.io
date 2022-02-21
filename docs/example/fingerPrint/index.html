@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas></canvas>
+<script>
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext("2d");
+    ctx.font = "24px Arial";
+    ctx.fillText("Hello Panda",22,33);
+    ctx.moveTo(0,60);
+    ctx.lineTo(100,60);
+    ctx.stroke();
+    //大家就随意创建一个canvas标签就是
+    var b64 = canvas.toDataURL().replace("data:image/png;base64,","");
+    //然后用toDataURL方法对生成的canvas图像进行64码进制转换
+    console.log(b64);
+    //然后我们打印出来看看效果
+</script>
+//一开始使用这个产生的代码
+</body>
+</html>

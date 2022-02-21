@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  console.time('create Map')
+  // let map = {}
+  let _map = new Map()
+  for (let i = 0; i < 10000;i++) {
+    // map[String(Math.random() * 1000000 | 0)] = `Math.random() * 1000000 | 0`.repeat(3)
+    _map.set(String(Math.random() * 1000000000 | 0), `Math.random() * 1000000 | 0`.repeat(3))
+  }
+  console.log(_map.size, _map.size > 2 ** 24)
+  console.timeEnd('create Map')
+  let map = new Proxy(_map, {
+    get () {
+        return 123
+    }
+  })
+  function getMap () {
+      console.time('get')
+      _map.get(String(Math.random() * 1000000 | 0))
+      // map[String(Math.random() * 1000000 | 0)]
+      console.timeEnd('get')
+  }
+  // setInterval(() => {
+  //   console.time('get')
+  //   map.get(String(Math.random() * 1000000 | 0))
+  //   // map[String(Math.random() * 1000000 | 0)]
+  //   console.timeEnd('get')
+  // }, 100)
+</script>
+</body>
+</html>

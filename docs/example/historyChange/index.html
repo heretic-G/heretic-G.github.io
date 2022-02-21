@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        svg {
+            fill: red;
+        }
+        path {
+            fill: #409eff;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<!--<div style="height: 1000px">-->
+<!--    <div style="height: 2000px;width: 100%; transform: scale(.5);transform-origin: left top;background-color: #409eff">-->
+<!--</div>-->
+<!--</div>-->
+<!--<p>123123</p>-->
+
+<div id="a" style="height: 300px;background-color: #409eff;overflow: hidden">
+    <div id="b" style="height: 100px;margin-top: 100px;background-color: #F15B07"></div>
+</div>
+
+<!--<svg fill="none" t="1641881047242" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1015" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">-->
+<!--    <defs>-->
+<!--        <style type="text/css"></style>-->
+<!--    </defs>-->
+<!--    <path fill="green" d="M903.64 0.65H119.82c-33.59 0-55.99 20.39-55.99 50.98v917.6c0 20.39 11.2 35.68 33.59 40.78 16.8 10.2 39.19 10.2 55.98 0l128.77-76.46 78.38 71.37c22.4 20.39 55.99 20.39 78.38 0l72.79-66.27 72.78 66.27c11.2 10.2 22.39 15.29 39.19 15.29s27.99-5.1 44.79-10.2l78.38-71.37 128.77 76.46c16.8 10.2 39.19 10.2 55.99 0 16.8-10.2 27.99-25.49 27.99-45.88V51.63C959.63 21.04 937.23 0.65 903.64 0.65zM885 921.92l-86.69-50.54c-24.77-16.85-61.92-11.23-80.49 5.62l-80.49 73-80.49-73c-12.38-11.23-24.77-16.85-43.34-16.85-18.58 0-30.96 5.61-43.34 16.85l-80.49 73-80.49-78.61c-24.77-16.85-55.72-22.46-80.49-5.62L142 921.92V74h743v847.92zM352.92 264.87c-11.91-14.19-10.06-35.34 4.13-47.25 14.19-11.91 35.34-10.06 47.25 4.13L512.65 351.1 621 221.75c11.91-14.19 33.06-16.04 47.25-4.13 14.19 11.91 16.04 33.06 4.13 47.25l-109.47 130.7h83.78c18.51 0 33.51 15 33.51 33.51s-15 33.51-33.51 33.51H546.17v52.28H646.7c18.51 0 33.51 15 33.51 33.51 0 18.51-15 33.51-33.51 33.51H546.17V696.5c0 18.51-15 33.51-33.51 33.51-18.51 0-33.51-15-33.51-33.51V581.88H378.61c-18.51 0-33.51-15.01-33.51-33.51 0-18.51 15.01-33.51 33.51-33.51h100.53v-52.28H378.61c-18.51 0-33.51-15-33.51-33.51s15.01-33.51 33.51-33.51h83.78L352.92 264.87z" p-id="1016">-->
+
+<!--    </path>-->
+<!--</svg>-->
+<script>
+    let a = document.querySelector('#a')
+    let b = document.querySelector('#b')
+    let timerId = -1
+    a.addEventListener('click', function (e) {
+        console.log(e)
+        timerId = setTimeout(() => {
+            console.log(123)
+        }, 0)
+    }, true)
+    b.addEventListener('click', function () {
+        clearTimeout(timerId)
+    }, true)
+    // setTimeout(() => {
+    //     window.zzz = Array.from({length: 1000}, () => {
+    //         return 'qqqqqqqqq'
+    //     })
+    //     window.yyy = Array.from({length: 1000}, () => {
+    //         return 'qqqqqqqqq'
+    //     })
+    //     let map = new Map()
+    //     // window.asd = zzz.map((_,index) => {
+    //     //     let str = zzz[index] + yyy[index]
+    //     //     if (!map.has(str)) {
+    //     //         map.set(str, str)
+    //     //     }
+    //     //     return map.get(str)
+    //     // })
+    //     window.asd = zzz.map((_,index) => {
+    //         let arr = [zzz[index], yyy[index]]
+    //         // if (!map.has(str)) {
+    //         //     map.set(str, str)
+    //         // }
+    //         return arr.join('')
+    //     })
+    // }, 3000)
+    // window.addEventListener('hashchange', function (e) {
+    //     console.log('hashChange', e)
+    // })
+    // window.addEventListener('popstate', function (e) {
+    //   console.log('popState', e)
+    // })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<script src="comlink.js"></script>
+<script type="module">
+    window.name = 'main'
+  function callback(value) {
+    alert(`Result: ${value}`);
+    return 123
+  }
+
+  async function init() {
+    const remoteFunction = Comlink.wrap(new Worker("./worker.js", {name: 'zzz'}));
+    let fun = await remoteFunction.toString()
+      let data = {
+          cb: callback
+      }
+    let zzz = await remoteFunction(Comlink.proxy(data));
+  }
+
+  init();
+</script>

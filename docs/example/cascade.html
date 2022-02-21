@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>123123</p>
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path fill="none" stroke="lightgrey"
+          d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+
+    <circle r="5" fill="red">
+        <animateMotion dur="20s" repeatCount="indefinite"
+                       path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+    </circle>
+</svg>
+<template class="zzzzzz">
+    <script src="./zzz.js"></script>
+    <script>
+        console.log(123)
+    </script>
+    <style>
+        p {
+            color: aquamarine;
+        }
+
+    </style>
+    <div>
+
+        <p>DOM 节点
+        <p>123123123</p>
+        <slot name="zzz"></slot>
+        </p>
+    </div>
+</template>
+<script>
+  const componentDocument = document.currentScript.ownerDocument;
+
+  class Component extends HTMLElement {
+
+    static get TAG_NAME() {
+      return 'component-tag-name';
+    };
+
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode: 'open' });
+      const content = componentDocument.querySelector('template').content.cloneNode(true);
+      shadow.appendChild(content);
+    }
+  }
+
+  customElements.define(Component.TAG_NAME, Component);
+    let z = document.createElement('component-tag-name')
+  let p = document.createElement('span')
+  p.innerText = '123123'
+  p.setAttribute('slot', 'zzz')
+  z.append(p)
+  z.classList.add('zzzzzz')
+  document.body.append(z)
+</script>
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;  const header = document.createElement('header');&ndash;&gt;-->
+<!--&lt;!&ndash;  // let span = document.createElement('span')&ndash;&gt;-->
+<!--&lt;!&ndash;  // span.innerText = '123'&ndash;&gt;-->
+<!--&lt;!&ndash;  // header.append(span)&ndash;&gt;-->
+<!--&lt;!&ndash;  setTimeout(() => {&ndash;&gt;-->
+<!--&lt;!&ndash;    const shadowRoot = header.attachShadow({mode: 'open'});&ndash;&gt;-->
+<!--&lt;!&ndash;    shadowRoot.innerHTML = '<p>Hello Shadow DOM</p>'&ndash;&gt;-->
+<!--&lt;!&ndash;  }, 10)&ndash;&gt;-->
+
+<!--&lt;!&ndash;  document.body.append(header)&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+</body>
+</html>

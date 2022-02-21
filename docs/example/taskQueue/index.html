@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// setTimeout、
+// MessageChannel、
+// postMessage、
+
+const channel = new MessageChannel()
+const broadcast = new BroadcastChannel('zz')
+
+const broadcast1 = new BroadcastChannel('zz')
+
+channel.port2.onmessage = function (e) {
+  // new Array(1000000).fill(Math.random())
+  console.log(performance.now().toFixed(2), 'MessageChannel', e.data)
+}
+
+broadcast1.onmessage = function (e) {
+  // new Array(1000000).fill(Math.random())
+  console.log(performance.now().toFixed(2), 'BroadcastChannel', e.data)
+}
+
+window.onmessage = function (e) {
+  // new Array(1000000).fill(Math.random())
+  console.log(performance.now().toFixed(2),'postMessage', e.data)
+}
+setTimeout( () => {
+  let count = 10
+  for (let i = 0;i < count; i++) {
+    setTimeout(() => {
+      // new Array(1000000).fill(Math.random())
+      console.log(performance.now().toFixed(2),'setTimeout', 'c' + i)
+    }, 0)
+  }
+  for (let i = 0;i < count; i++) {
+    broadcast.postMessage('a' + i)
+  }
+  for (let i = 0;i < count; i++) {
+    window.postMessage('d' + i)
+  }
+  for (let i = 0;i < count; i++) {
+    channel.port1.postMessage('b' + i)
+  }
+}, 200)
+
+</script>
+
+</body>
+</html>

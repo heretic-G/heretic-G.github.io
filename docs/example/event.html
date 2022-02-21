@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <input style="height: 100px;background-color: rebeccapurple" />
+    <input style="height: 100px;" />
     <script>
 
         function createPromise () {
@@ -47,12 +47,35 @@
             console.log('dblclick')
             e.preventDefault()
         })
-        div.addEventListener('keydown', function (e) {
-            console.log('keydown')
-            e.preventDefault()
-            e.stopPropagation()
-            e.stopImmediatePropagation()
+        div.addEventListener('compositionstart', function () {
+          console.log('compositionstart')
         })
+
+        div.addEventListener('compositionupdate', function () {
+          console.log('compositionupdate')
+        })
+
+        div.addEventListener('compositionend', function (e) {
+          console.log('compositionend', e.target.value)
+        })
+
+        div.addEventListener('change', function () {
+          console.log('change')
+        })
+
+        // div.addEventListener('keydown', function (e) {
+        //     console.log('keydown')
+        //   //   console.log(e)
+        //   // e.preventDefault()
+        //   // e.stopPropagation()
+        //   // e.stopImmediatePropagation()
+        //   //   if (e.key === '！' || e.key === '!') {
+        //   //       console.log(e.key)
+        //   //       // e.preventDefault()
+        //   //       e.stopPropagation()
+        //   //       e.stopImmediatePropagation()
+        //   //   }
+        // })
 
         div.addEventListener('input', function (e) {
             console.log('input')

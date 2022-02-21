@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            console.log('load', performance.now())
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log('DOMContentLoaded', performance.now())
+        })
+    </script>
+    <script>
+        fetch('./z.js', {method: 'head'}).then(res => {
+            console.log(res.headers.get('last-modified'))
+        })
+    </script>
+    <script type="module" src="defer1.js" ></script>
+    <script onload="aa()"  src="z.js"></script>
+    <script src="zz.js" defer></script>
+    <script>
+
+    </script>
+
+<!--    <link rel="preload" href="./1.png" as="image">-->
+<!--    <link href="deferCss.css" rel="stylesheet">-->
+<!--    <style>-->
+<!--        p {-->
+<!--            padding: 30px;-->
+<!--        }-->
+<!--        button,p {-->
+<!--            word-break: break-all;-->
+<!--            height: 100px;-->
+<!--            width: 200px;-->
+<!--            position: relative;-->
+<!--            background-color: burlywood;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        button::before, p::before {-->
+<!--            content: '';-->
+<!--            position: absolute;-->
+<!--            height: 20px;-->
+<!--            width: 5px;-->
+<!--            background-color: #cccccc;-->
+
+<!--        }-->
+<!--        button::after, p::after {-->
+<!--            content: '';-->
+<!--            position: absolute;-->
+<!--            height: 20px;-->
+<!--            width: 5px;-->
+<!--            background-color: #F15B07;-->
+
+<!--        }-->
+<!--        span {-->
+<!--            display: block;-->
+<!--            position: absolute;-->
+<!--            height: 20px;-->
+<!--            width: 20px;-->
+<!--            background-color: #F1F200;-->
+<!--        }-->
+<!--        .a {-->
+<!--            position: relative;-->
+<!--            height: 100px;-->
+<!--            width: 100px;-->
+<!--            margin: 20px;-->
+<!--            padding: 20px;border: 3px solid #ddd;-->
+<!--            background-color: #F15B07;-->
+<!--        }-->
+<!--        .b {-->
+<!--            position: absolute;-->
+<!--            height: 10px;-->
+<!--            width: 10px;-->
+<!--            background-color: #409eff;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<!--<div style="width: 50px;background-color: burlywood">-->
+<!--    <p style="transform: scale(calc(100%))">zzzzzzzzz</p>-->
+<!--</div>-->
+<!--<div class="a">-->
+<!--    <div class="b">-->
+
+<!--    </div>-->
+<!--</div>-->
+
+<div style="display: flex">
+    <div style="width:400px;height: 20px;background-color: #F15B07">
+        123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231123123123112312312311231231231
+    </div>
+    <div style="flex: 1;height: 20px;background-color: #409eff">
+
+    </div>
+</div>
+<style>
+    .c .aaa:nth-of-type(4) {
+        color: red;
+    }
+</style>
+
+<div class="c">
+    <p>123</p>
+    <span>222</span>
+    <p>123</p>
+    <span>222</span>
+    <p>123</p>
+    <p class="aaa"><span>222</span> 555</p>
+    <p class="aaa"> 555</p>
+    <p class="aaa"> 555</p>
+</div>
+
+<!--<div>-->
+<!--    <button>123</button>-->
+<!--    <div></div>-->
+<!--</div>-->
+
+<button>123<span></span></button>
+
+<p>123123123123123123123123123123123123<span></span></p>
+
+<!--<div>-->
+<!--    <script>-->
+<!--        setTimeout(() => {-->
+<!--            window.zzz = {-->
+<!--                a: 1,-->
+<!--                b:'1',-->
+<!--                c: true,-->
+<!--                d: undefined,-->
+<!--                e: null,-->
+<!--                f: NaN-->
+<!--            }-->
+<!--        }, 3000)-->
+<!--    </script>-->
+<!--</div>-->
+</body>
+</html>

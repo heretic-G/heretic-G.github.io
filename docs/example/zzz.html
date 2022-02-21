@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50%">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<video controls src="https://static-media.tosee.cn/video/home-page/miracast-mobile-3.mp4"></video>
+    <canvas width="60000" height="540"></canvas>
+<button class="aa">123</button>
+<button class="zz">下载</button>
+
+<script>
+    let video = document.querySelector('video')
+    let canvas = document.querySelector('canvas')
+    var ctx = canvas.getContext('2d');
+    let button = document.querySelector('.aa')
+    let zz = document.querySelector('.zz')
+    zz.addEventListener('click', function () {
+        let canvas = document.querySelector('canvas')
+        let imgData = canvas.toDataURL("image/jpeg")
+        let img = new Image()
+        img.setAttribute('crossOrigin', 'anonymous');
+        img.src = imgData
+        img.onload = function () {
+            document.body.append(img)
+        }
+    })
+    button.addEventListener('click', function () {
+        zzz()
+    })
+    function zzz () {
+        console.log(123)
+        video.play()
+
+        let num = 0
+        requestAnimationFrame(function onDraw() {
+            console.log(canvas.width, canvas.height); // 确保等于parentElement.clientW/H
+            ctx.drawImage(
+                video, // image source
+                0, 0, // source position
+                video.videoWidth, video.videoHeight, // copy scale
+                num, 0, // draw position
+                video.videoWidth, video.videoHeight, // draw scale
+                // X 不要以为这样就OK了
+                // canvas.parentElement.clientWidth, canvas.parentElement.clientHeight, // draw scale
+            );
+            num += video.videoWidth
+            video.played && requestAnimationFrame(onDraw);
+        });
+    }
+
+</script>
+<!--<script src="z.js"></script>-->
+</body>
+</html>
