@@ -74,4 +74,88 @@ instanceof 其实先理解instanceof的含义 他是通过调用@@hasInstance来
 
 这时候看差异就是返回对象和不返回对象的差异 我这里猜可能是`GetPrototypeFromConstructor`的`GetFunctionRealm`
 当然一切都是猜测......
+---
 
+```javascript
+var b = 10;
+(function b(){
+   b = 20;
+   console.log(b); 
+})();
+
+
+var a;
+if (!("userName" in window)) {
+   userName = "毛十八";
+}
+console.log(userName)
+
+new Promise((res, rej) => {
+    new Error(1)
+}).then(res => {
+   console.log(res, 2)
+}).catch(err => {
+   console.log(err, 1)
+})
+
+new Promise((res, rej) => {
+   throw new Error(1)
+}).then(res => {
+   console.log(res, 2)
+}).catch(err => {
+   console.log(err, 1)
+})
+
+var x = 1;
+function f(x, y = function () { console.log(x, 44); x = 3; console.log(x, 55); }) {
+   console.log(x, 11);
+   var x = 2;
+   y();
+   console.log(x, 22);
+}
+f(4);
+console.log(x, 33)
+
+
+// 11 undefined 33 1 55 3 22 2
+
+
+async function a () {
+   let bb = await 1
+   console.log('11')
+   return bb
+}
+async function a2 () {
+   return 1
+}
+async function a1 () {
+   let bb = await Promise.resolve(1)
+   return bb
+}
+async function a4 () {
+   let bb = await Promise.resolve(1).then(res => 2)
+   return bb
+}
+
+async function a3 () {
+   let bb = Promise.resolve(1)
+   return bb
+}
+Promise.resolve().then(res => {
+   console.log(0)
+}).then(res => {
+   console.log(1)
+}).then(res => {
+   console.log(2)
+}).then(res => {
+   console.log(3)
+}).then(res => {
+   console.log(4)
+})
+a().then(res => {console.log(5)})
+a2().then(res => {console.log(7)})
+a1().then(res => {console.log(6)})
+a3().then(res => {console.log(8)})
+a4().then(res => {console.log(9)})
+
+```

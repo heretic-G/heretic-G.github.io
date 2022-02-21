@@ -1,6 +1,8 @@
 
 
+https://www.cnblogs.com/tifnan2015/p/5363166.html
 
+https://datatracker.ietf.org/doc/html/rfc7252#section-5.6
 
 #### Freshness 新鲜期
     也就是一个资源能保存多久 只有Expires和 Cache-Control: max-age 直接声明这个时间长度
