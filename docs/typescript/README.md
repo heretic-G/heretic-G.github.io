@@ -1,3 +1,59 @@
 ### typescript
     
 typescript的学习记录 主要包含一些题的实现，目前准备记录一些技巧和理解
+
+
+* [keyof-array](typescript/keyof-array.md)
+* [typeof-enum](typescript/typeof-enum.md)
+* [UnionToIntersection](typescript/UnionToIntersection.md)
+* [GenericTypes](typescript/GenericTypes.md)
+* [实现类似const的效果](typescript/实现类似const的效果.md)
+* [基于奇偶来输出不同的数据结构](typescript/基于奇偶来输出不同的数据结构.md)
+
+* [2070-Drop Char](typescript/2070.md)
+* [1130-ReplaceKeys](typescript/1130.md)
+* [2852-OmitByType](typescript/2852-OmitByType.md)
+* [3192-Reverse](typescript/3192-Reverse.md)
+* [531-String-to-Union](typescript/531-String-to-Union.md)
+* [651-LengthOfString2](typescript/651-LengthofString2.md)
+* [399-TupleFilter](typescript/399-TupleFilter.md)
+
+* [E-14-FirstofArray](typescript/E-14-FirstofArray.md)
+
+* [M-15-LastofArray](typescript/M-15-LastofArray.md)
+* [M-16-Pop](typescript/M-16-Pop.md)
+
+* [H-6-SimpleVue](typescript/H-6-SimpleVue.md)
+* [H-17-Currying1](typescript/H-17-Currying1.md)
+* [H-55-UnionToIntersection](typescript/H-55-UnionToIntersection.md)
+* [H-57-GetRequired](typescript/H-57-GetRequired.md)
+* [H-59-GetOptional](typescript/H-59-GetOptional.md)
+* [H-89-RequiredKeys](typescript/H-89-RequiredKeys.md)
+* [H-90-OptionalKeys](typescript/H-90-OptionalKeys.md)
+* [H-112-CapitalizeWords](typescript/H-112-CapitalizeWords.md)
+* [H-114-CamelCase](typescript/H-114-CamelCase.md)
+* [H-147-C-printfParser](typescript/H-147-C-printfParser.md)
+* [H-223-IsAny](typescript/H-223-IsAny.md)
+* [H-270-TypedGet](typescript/H-270-TypedGet.md)
+* [H-300-StringToNumber](typescript/H-300-StringtoNumber.md)
+* [H-399-TupleFilter](typescript/H-399-TupleFilter.md)
+* [H-472-TupleToEnumObject](typescript/H-472-TupletoEnumObject.md)
+* [H-545-printf](typescript/H-545-printf.md)
+* [H-553-DeepObjectToUnique](typescript/H-553-DeepObjectToUnique.md)
+* [H-651-LengthOfString2](typescript/H-651-LengthofString2.md)
+* [H-847-StringJoin](typescript/H-847-StringJoin.md)
+* [H-956-DeepPick](typescript/H-956-DeepPick.md)
+* [H-1290-Pinia](typescript/H-1290-Pinia.md)
+* [H-1383-Camelize](typescript/H-1383-Camelize.md)
+* [H-2059-DropString](typescript/H-2059-DropString.md)
+* [H-2822-Split](typescript/H-2822-Split.md)
+* [H-2828-ClassPublicKeys](typescript/H-2828-ClassPublicKeys.md)
+* [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
+* [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)
+* [H-4037-IsPalindrome](typescript/H-4037-IsPalindrome.md)
+
+* [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
+* [X-216-Slice](typescript/X-216-Slice.md)
+
+* [基于id过滤数组](typescript/基于id过滤数组.md)
+* [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
