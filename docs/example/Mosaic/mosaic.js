@@ -486,6 +486,23 @@ class Mosaic {
       // 判断修改状态
       if (opt.WMChangeSize) {
         let {img, left, top, height, width} = opt.changePos;
+        if (width < 0) {
+          width = -width
+          if (opt.changePos.horizontal === 'left') {
+            left = left - width
+          } else {
+            left = left + width
+          }
+        }
+        if (height < 0) {
+          height = -height
+          if (opt.changePos.vertical === 'top') {
+            top = top - height
+          } else {
+            top = top + height
+          }
+        }
+        console.log('change1', opt.changePos)
         opt.WMInfo = {
           img, left, top, width, height
         }
