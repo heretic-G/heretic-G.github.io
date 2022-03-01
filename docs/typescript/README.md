@@ -57,3 +57,4 @@ typescript的学习记录 主要包含一些题的实现，目前准备记录一
 
 * [基于id过滤数组](typescript/基于id过滤数组.md)
 * [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
+* [除法实现](typescript/Divide.md)
