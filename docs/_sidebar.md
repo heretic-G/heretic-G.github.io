@@ -10,10 +10,11 @@
   * [React-StrictMode](react/React-Strictmode.md)
   * [简单的权限控制demo](react/权限控制.md)
   * [scheduler](react/scheduler.md)
+  * [eagerState优化逻辑](react/eagerState.md)
 
-* [typescript](typescript/README.md)
+* [typescript练习和总结](typescript/README.md)
   
-* [leetcode](leetcode/README.md)
+* [leetcode练习和总结](leetcode/README.md)
 
 * [learn](learn/README.md)
 
