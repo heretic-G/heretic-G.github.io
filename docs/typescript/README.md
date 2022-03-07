@@ -2,13 +2,17 @@
     
 typescript的学习记录 主要包含一些题的实现，目前准备记录一些技巧和理解
 
-
+* [依赖泛型推导去生成函数参数结构的处理](typescript/依赖泛型推导去生成函数参数结构的处理.md)
+* [泛型二次依赖导致的无法动态去生成类型](typescript/泛型二次依赖导致的无法动态去生成类型.md)
 * [keyof-array](typescript/keyof-array.md)
 * [typeof-enum](typescript/typeof-enum.md)
 * [UnionToIntersection](typescript/UnionToIntersection.md)
 * [GenericTypes](typescript/GenericTypes.md)
 * [实现类似const的效果](typescript/实现类似const的效果.md)
 * [基于奇偶来输出不同的数据结构](typescript/基于奇偶来输出不同的数据结构.md)
+* [基于id过滤数组](typescript/基于id过滤数组.md)
+* [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
+* [除法实现](typescript/Divide.md)
 
 * [2070-Drop Char](typescript/2070.md)
 * [1130-ReplaceKeys](typescript/1130.md)
@@ -54,7 +58,3 @@ typescript的学习记录 主要包含一些题的实现，目前准备记录一
 
 * [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
 * [X-216-Slice](typescript/X-216-Slice.md)
-
-* [基于id过滤数组](typescript/基于id过滤数组.md)
-* [变更this去建立调用顺序](typescript/变更this去建立调用顺序.md)
-* [除法实现](typescript/Divide.md)
