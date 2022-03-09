@@ -1,8 +1,9 @@
 // 防止多次请求的总拦截(简单处理拦截)
-let apiMap = {}
-let keyMap = {}
 let key = 1
-let __activeKey = ''
+let domMap = new Map()
+let keyToDomMap = new Map()
+let __activeKey = false
+let __activeDom
 
 function getKey () {
   key += 1
@@ -10,75 +11,129 @@ function getKey () {
 }
 
 function clearActiveKey (_key) {
-  if (keyMap[_key] && keyMap[_key].length) {
-    keyMap[_key].length.length -= 1
-    if (keyMap[_key].length.length === 0) {
-      let all = keyMap[_key].all
-      let arr = all.split('-')
-      arr.forEach(curr => {
-        if (curr) {
-          let urlKey = keyMap[curr]
-          delete apiMap[urlKey]
-          delete keyMap[curr]
-        }
+  if (keyToDomMap.has(_key)) {
+    const dom = keyToDomMap.get(_key)
+    const keyInfo = domMap.get(dom)
+    keyInfo.length -= 1
+    setTimeout(() => {
+      console.log(keyInfo)
+      if (keyInfo.length === 0) {
+        domMap.delete(dom)
+        dom.removeAttribute('data-api-loading')
+      }
+    }, 0)
+    keyToDomMap.delete(_key)
+  }
+}
+
+function setActiveKey (activeKeyArr) {
+  if (activeKeyArr.length > 0) {
+    if (!domMap.has(__activeDom)) {
+      domMap.set(__activeDom, {
+        length: 0,
+        arr: []
       })
-      document.querySelector(`[data-api-check="${all}"]`).removeAttribute('data-api-check')
     }
-  } else {
-    let urlKey = keyMap[_key]
-    delete apiMap[urlKey]
-    delete keyMap[_key]
+    let domInfo = domMap.get(__activeDom)
+    domInfo.length += activeKeyArr.length
+    domInfo.arr = domInfo.arr.concat(activeKeyArr)
+    domMap.set(__activeDom, domInfo)
+    for (let i = 0;i < activeKeyArr.length; i++) {
+      keyToDomMap.set(activeKeyArr[i], __activeDom)
+    }
+    if (domInfo.length > 0 && !__activeDom.hasAttribute('data-api-loading')) {
+      __activeDom.setAttribute('data-api-loading', 'true')
+    }
   }
 }
 
 function bindCheckApi () {
   document.addEventListener('click', function (e) {
-    if (__activeKey) {
-      if (e.target.className.indexOf('disabled') < 0) {
-        let active = __activeKey.split('-')
-        let num = { length:active.length - 1 }
-        active.forEach(curr => {
-          if (keyMap[curr]) {
-            keyMap[curr].all = __activeKey
-            keyMap[curr].length = num
-          }
-        })
-        e.target.setAttribute('data-api-check', __activeKey)
-        __activeKey = ''
-      }
+    const hasLimitApi = e.target.hasAttribute('data-limit-api')
+    if (hasLimitApi) {
+      setActiveKey(__activeKey)
+      __activeKey = false
     }
   })
   document.addEventListener('click', function (e) {
-    __activeKey = ''
-    let apiCheck = e.target.getAttribute('data-api-check')
-    if (apiCheck) {
-      e.stopPropagation()
+    const hasLimitApi = e.target.hasAttribute('data-limit-api')
+    if (hasLimitApi) {
+      __activeKey = []
+      __activeDom = e.target
+      let apiCheck = e.target.hasAttribute('data-api-loading')
+      if (apiCheck) {
+        e.stopPropagation()
+      }
+    } else {
+      __activeKey = false
     }
   }, true)
 }
 
-function fetch (option) {
-  let urlKey = option.url + option.type + JSON.stringify(option.params)
+function fetch () {
   let _key
-  if (!apiMap[key]) {
-    _key = getKey()
-    apiMap[urlKey] = _key
-    keyMap[_key] = {
-      key: urlKey
-    }
-    __activeKey += '-' + _key
-  }
-  return new Promise((res, rej) => {
-    new Promise((_res, _rej) => {
-      setTimeout(() => {
-        _res(1)
-      }, 1000)
-    }).then(() => {
-      clearActiveKey(_key)
+  let _resolveFun
+  let _rejectFun
+  let _resNext
+  let _rejNest
+  const fetchApi = new Promise((res, rej) => {
+    setTimeout(() => {
       res()
-    }, () => {
-      clearActiveKey(_key)
-      rej()
-    })
+    }, 1000)
   })
+  if (!Array.isArray(__activeKey)) {
+    return fetchApi.finally(() => {
+      clearActiveKey(_key)
+    })
+  }
+
+  _key = getKey()
+  __activeKey.push(_key)
+
+  fetchApi.then((r) => {
+    __activeKey = []
+    __activeDom = keyToDomMap.get(_key)
+    if (typeof _resolveFun === 'function') {
+      try {
+        let result = _resolveFun()
+        _resNext(result)
+      } catch (e) {
+        _rejNest(e)
+      } finally {
+        setActiveKey(__activeKey)
+        __activeKey = false
+      }
+    } else {
+      _resNext(r)
+    }
+  }, (r) => {
+    __activeKey = []
+    __activeDom = keyToDomMap.get(_key)
+    if (typeof _rejectFun === 'function') {
+      try {
+        let result = _rejectFun()
+        _resNext(result)
+      } catch (e) {
+        _rejNest(e)
+      } finally {
+        setActiveKey(__activeKey)
+        __activeKey = false
+      }
+    } else {
+      _rejNest(r)
+    }
+  })
+
+  return {
+    then: function (resolve, reject) {
+      _resolveFun = resolve
+      _rejectFun = reject
+      return new Promise((_res, _rej) => {
+        _resNext = _res
+        _rejNest = _rej
+      }).finally(() => {
+        clearActiveKey(_key)
+      })
+    }
+  }
 }

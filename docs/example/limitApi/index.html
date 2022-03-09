@@ -8,11 +8,11 @@
     <title>Document</title>
     <script src="./index.js"></script>
     <style>
-        [data-api-check] {
+        [data-api-loading] {
             position: relative;
             opacity: .5;
         }
-        [data-api-check]::before {
+        [data-api-loading]::before {
              position: absolute;
              left: 10px;
              top: 50%;
@@ -43,16 +43,20 @@
     <div data-limit-api class="default-btn">请求</div>
     <script>
         bindCheckApi()
+        function logToBody (msg) {
+            let pEl = document.createElement('p')
+            pEl.innerText = msg
+            document.body.append(pEl)
+        }
         document.querySelector('.default-btn').addEventListener('click', function () {
-          fetch({
-            url: '111',
-            type: 'get',
-            data: {
-              name: 'lisi'
-            }
-          }).then(res => {
-            console.log(123)
-          })
+            logToBody('fetch1 start')
+            fetch().then(res => {
+                logToBody('fetch1 end')
+                logToBody('fetch2 start')
+                fetch().then(res => {
+                    logToBody('fetch2 end')
+                })
+            })
         })
     </script>
 </body>
