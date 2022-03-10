@@ -84,8 +84,10 @@ dispatch flag
 
 
 
+https://www.w3.org/TR/DOM-Level-3-Events/#event-flow-default-cancel
 
-
+Many implementations additionally interpret an event listener’s return value, such as the value false, to mean that the default action of cancelable events will be cancelled (though window.onerror handlers are cancelled by returning true).
+许多实现额外解释事件侦听器的返回值，例如值 false，表示可取消事件的默认操作将被取消（尽管 window.onerror 处理程序通过返回 true 被取消）。
 
 一部分规范资料地址
 
