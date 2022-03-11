@@ -63,6 +63,7 @@
     * [572-另一棵树的子树](leetcode/BinaryTree/572-另一棵树的子树.md)
     * [617-合并二叉树](leetcode/BinaryTree/617-合并二叉树.md)
     * [669-修剪二叉搜索树](leetcode/BinaryTree/669-修剪二叉搜索树.md)
+    * [2049-统计最高分的节点数目](leetcode/BinaryTree/2049-统计最高分的节点数目.md)
 
 * trie
     * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
