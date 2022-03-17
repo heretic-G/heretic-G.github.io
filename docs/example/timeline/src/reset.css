@@ -1,0 +1,48 @@
+html,
+body,
+div,
+canvas,
+header,
+p,
+input,
+ul,
+li,
+label,
+textarea, a{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+label {
+    display: inline-block;
+}
+input,textarea {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #999999;
+    font-size: 12px;
+}
+li {
+    list-style: none;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    border: solid 2px #505163;
+    vertical-align: middle;
+    font-size: 14px;
+    background-color: #f9d59d;
+    color: #505163;
+    cursor: pointer;
+}
+.btn-cancel {
+    background-color: #f3f4f6;
+}

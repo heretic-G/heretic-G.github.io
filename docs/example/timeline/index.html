@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <title>Timeline</title>
+</head>
+<body>
+	<header class="timeLine-header-con">
+		<div class="timeLine-header-body">
+			<div class="timeLine-logo-con">
+				<img class="timeLine-logo" src="./image/timeline-black.svg" alt="">
+				<span class="timeLine-point">·</span>
+				<img class="timeLine-logo-cn" src="./image/timeline-cn-black.svg" alt="">
+			</div>
+            <a id="timeLine-to-login" class="timeLine-to-login" style="display: none">
+                登录
+            </a>
+			<div class="timeLine-userInfo-con" style="display: none">
+				<img class="userInfo-head" src="./image/head-default.svg" alt="">
+				<span class="userInfo-name" id="userInfo-name"></span>
+                <div class="timeLine-operate-con" id="logout">
+                    退出登录
+                </div>
+			</div>
+			<!--<span class="timeLine-notRegister">尚未开发注册，敬请期待</span>-->
+		</div>
+	</header>
+	<main class="timeLine-main">
+        <div class="timeLine-currBgc-con"></div>
+        <div class="timeLine-tags-con">
+            <div class="timeLine-tags-body-con">
+                <div class="timeLine-tags-body">
+                    <div id="chooseTimeLine" class="timeLine-tags-item cursor" style="display: none;">
+                        <span style="white-space: nowrap">时间线选择</span>
+                        <img class="timeLine-tags-close" src="./image/close.svg" alt="">
+                    </div>
+                </div>
+                <span class="share-btn" id="shareBtn" style="display: none;">
+                    <img class="share-fly-logo" src="./image/share-fly.svg" alt="">
+                    <span>分享</span>
+                </span>
+                <span class="create-img-btn" id="createImg" style="display: none;">
+                    <span>导出图片</span>
+                </span>
+            </div>
+        </div>
+		<div class="timeLine-tags-temp"></div>
+		<div class="canvas-con">
+			<canvas class="canvas-main" height="5000" width="1200" id="canvas"></canvas>
+		</div>
+	</main>
+    <div class="mask" style="display: none">
+        <div class="mask-body">
+            <div class="add-event-con" style="display: none">
+                <p class="popup-title">新增事件</p>
+                <ul class="event-logo-list">
+                    <li data-url="./image/1.svg" class="event-logo-item event-logo-item_active logo-one"></li>
+                    <li data-url="./image/2.svg" class="event-logo-item logo-two"></li>
+                    <li data-url="./image/3.svg" class="event-logo-item logo-three"></li>
+                    <li data-url="./image/6.svg" class="event-logo-item logo-six"></li>
+                    <li data-url="./image/7.svg" class="event-logo-item logo-seven"></li>
+                </ul>
+                <div class="add-event-form">
+                    <div class="form-line">
+                        <span class="input-label" >名称：</span><input id="add-name" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >时间：</span><input readonly="readonly" id="addDatepicker" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >责任人：</span><input id="addLiablePerson" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >描述：</span><textarea id="add-desc" class="textarea"></textarea>
+                    </div>
+                    <div class="form-line" style="display: flex;flex-wrap: wrap">
+                        <span class="input-label">时间线：</span>
+                        <div class="add-event-timeLine" style="display: flex; flex:1;flex-wrap: wrap">
+                            <div class="add-timeLine-con">
+                                <input class="add-timeLine-input" type="text" placeholder="添加">
+                                <ul class="timeLine-list-con"></ul>
+                                <img class="add-timeLine-btn" src="./image/add.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-btn-con" style="display: flex;">
+                    <span class="btn add-event-sure" id="addEventBtn">确定</span>
+                    <span class="btn btn-cancel add-event-cancel hide-mask" id="addEventCancel">取消</span>
+                </div>
+            </div>
+            <div class="edit-event-con" style="display: none">
+                <p class="popup-title">编辑事件</p>
+                <ul class="event-logo-list">
+                    <li data-url="./image/1.svg" class="event-logo-item event-logo-item_active logo-one"></li>
+                    <li data-url="./image/2.svg" class="event-logo-item logo-two"></li>
+                    <li data-url="./image/3.svg" class="event-logo-item logo-three"></li>
+                    <li data-url="./image/6.svg" class="event-logo-item logo-six"></li>
+                    <li data-url="./image/7.svg" class="event-logo-item logo-seven"></li>
+                </ul>
+                <div class="edit-event-form">
+                    <div class="form-line">
+                        <span class="input-label" >名称：</span><input id="edit-name" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >时间：</span><input readonly="readonly" id="editDatepicker" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >责任人：</span><input id="editLiablePerson" class="input" type="text">
+                    </div>
+                    <div class="form-line">
+                        <span class="input-label" >描述：</span><textarea id="edit-desc" class="textarea"></textarea>
+                    </div>
+                    <div class="form-line" style="display: flex;flex-wrap: wrap">
+                        <span class="input-label">时间线：</span>
+                        <div class="edit-event-timeLine" style="display: flex; flex:1;flex-wrap: wrap">
+                            <div class="add-timeLine-con">
+                                <input class="add-timeLine-input" type="text" placeholder="添加">
+                                <ul class="timeLine-list-con"></ul>
+                                <img class="add-timeLine-btn" src="./image/add.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-btn-con" style="display: flex;">
+                    <span class="btn add-event-sure" id="editEventBtn">确定</span>
+                    <span class="btn btn-cancel add-event-cancel hide-mask">取消</span>
+                </div>
+            </div>
+            <div class="delete-tip" style="display: none">
+                <p class="popup-title">提示</p>
+                <p class="delete-info">您确定要删除该事件？</p>
+                <div class="btn-con">
+                    <span class="btn btn-delete" id="delete"><img class="delete-btn-img" src="./image/delete-s.svg" alt="">确定删除</span><span class="btn btn-cancel btn-delete-cancel hide-mask">取消</span>
+                </div>
+            </div>
+            <div class="share-con" style="display: none">
+                <img class="close-btn hide-mask" src="./image/close-b.svg" alt="">
+                <p class="popup-title">分享</p>
+                <div class="share-body">
+                    <input id="shareInput" class="share-input" type="text"><span class="btn" id="copyLink">复制链接</span>
+                </div>
+            </div>
+            <div class="create-timeLine-con" style="display: none">
+                <img class="close-btn hide-mask" src="./image/close-b.svg" alt="">
+                <p class="popup-title">选择时间线</p>
+                <div class="create-timeLine-body">
+                    <div class="choose-timeline-con not-active-timeline"></div>
+                    <img class="shuttle-logo" src="./image/shuttle.svg" alt="">
+                    <div class="choose-timeline-con active-timeline"></div>
+                </div>
+                <div class="create-timeLine-btn-con">
+                    <span class="btn mar-rig-10 sure-shuttle-btn">确定</span>
+                    <span class="btn btn-cancel hide-mask">取消</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script src="dist/utils.js"></script>
+    <script src="dist/ratio.js"></script>
+    <script src="dist/index.js"></script>
+</body>
+</html>
