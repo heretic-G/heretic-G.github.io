@@ -20,9 +20,16 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
+    "@rollup/plugin-run": "^2.1.0",
     "babel-loader": "^8.2.2",
     "open": "^8.4.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "rollup": "^2.68.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-web-worker-loader": "^1.6.1"
   }
 }

@@ -7,6 +7,10 @@ self.addEventListener('activate', function(event) {
   self.clients.claim()
 })
 
+self.addEventListener('message', function (p) {
+  console.log(p)
+})
+
 
 broadcast.addEventListener('message', function (payload) {
   const now = performance.now()

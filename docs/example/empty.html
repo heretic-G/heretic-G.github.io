@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <script>
+        document.addEventListener('error', function (...e) {
+            console.log(111111111111)
+            console.log('123123123123',e)
+        })
+
         window.onload = function () {
             console.log('load', performance.now())
         }
@@ -11,14 +17,19 @@
             console.log('DOMContentLoaded', performance.now())
         })
     </script>
-    <script>
-        fetch('./z.js', {method: 'head'}).then(res => {
-            console.log(res.headers.get('last-modified'))
-        })
-    </script>
-    <script type="module" src="defer1.js" ></script>
-    <script onload="aa()"  src="z.js"></script>
-    <script src="zz.js" defer></script>
+    <style>
+        body {
+            background-image: url("../a.png");
+        }
+    </style>
+<!--    <script>-->
+<!--        fetch('./z.js', {method: 'head'}).then(res => {-->
+<!--            console.log(res.headers.get('last-modified'))-->
+<!--        })-->
+<!--    </script>-->
+<!--    <script type="module" src="defer1.js" ></script>-->
+<!--    <script onload="aa()"  src="z.js"></script>-->
+<!--    <script src="zz.js" defer></script>-->
     <script>
 
     </script>
@@ -101,6 +112,7 @@
 </style>
 
 <div class="c">
+    <img src="./z.png" alt="">
     <p>123</p>
     <span>222</span>
     <p>123</p>
