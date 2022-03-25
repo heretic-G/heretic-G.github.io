@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <div class="d">
+                    <div class="e">
+                        <button>123</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var channel = new MessageChannel();
+    var port1 = channel.port1;
+    var port2 = channel.port2;
+    port1.onmessage = function(event) {
+        console.log("port1收到来自port2的数据：" + event.data);
+    }
+    port2.onmessage = function(event) {
+        console.log("port2收到来自port1的数据：" + event.data);
+    }
+    let zzz = setInterval(() => {
+        console.log('setInterval')
+    }, 0)
+    let aEl = document.querySelector('.a')
+    let bEl = document.querySelector('.b')
+    let cEl = document.querySelector('.c')
+    let dEl = document.querySelector('.d')
+    let eEl = document.querySelector('.e')
+    aEl.addEventListener('click', function () {
+        console.log('a 捕获')
+        let arr = new Array(1000000000)
+        for (let i = 0; i< arr.length ;i++) {}
+    },true)
+    aEl.addEventListener('click', function () {
+        Promise.resolve().then(res => {
+            console.log('a 冒泡 promise')
+        })
+        console.log('a 冒泡')
+    })
+    bEl.addEventListener('click', function () {
+        Promise.resolve().then(res => {
+            console.log('b 捕获 promise')
+        })
+        console.log('b 捕获')
+    },true)
+    bEl.addEventListener('click', function () {
+        Promise.resolve().then(res => {
+            console.log('b 冒泡 promise')
+        })
+        console.log('b 冒泡')
+    })
+    cEl.addEventListener('click', function () {
+        Promise.resolve().then(res => {
+            console.log('c 捕获 promise')
+        })
+        console.log('c 捕获')
+    },true)
+    cEl.addEventListener('click', function () {
+        console.log('c 冒泡')
+    })
+    dEl.addEventListener('click', function () {
+        console.log('d 捕获')
+    },true)
+    dEl.addEventListener('click', function () {
+        console.log('d 冒泡')
+    })
+    eEl.addEventListener('click', function () {
+        console.log('e 捕获')
+    },true)
+    eEl.addEventListener('click', function () {
+        console.log('e 冒泡')
+    })
+    document.body.addEventListener('click', function () {
+        Promise.resolve().then(res => {
+            console.log('body 捕获 promise')
+        })
+        port1.postMessage('123')
+        console.log('body 捕获 发起postMessage')
+    }, true)
+    document.body.addEventListener('click', function () {
+        console.log('body 冒泡结束')
+        setTimeout(() => {
+            clearInterval(zzz)
+        }, 100)
+    })
+</script>
+
+</body>
+</html>
