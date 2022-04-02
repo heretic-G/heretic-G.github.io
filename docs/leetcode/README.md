@@ -40,7 +40,7 @@
     * [410-分割数组的最大值](leetcode/array/410-分割数组的最大值.md)
     * [154-寻找旋转排序数组中的最小值II](leetcode/array/154-寻找旋转排序数组中的最小值II.md)
     * [1658.将x减到0的最小操作数](leetcode/array/1658.将x减到0的最小操作数.md)
-
+    * [954.二倍数对数组](leetcode/arrar/954.二倍数对数组.md)
 * binaryTree
     * [BinaryTree/671](leetcode/BinaryTree/671.md)
     * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
