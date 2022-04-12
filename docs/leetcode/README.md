@@ -87,6 +87,7 @@
     * [剑指Offer48-最长不含重复字符的子字符串](leetcode/string/剑指Offer48-最长不含重复字符的子字符串.md)
     * [2055.蜡烛之间的盘子](leetcode/string/2055.蜡烛之间的盘子.md)
     * [796-旋转字符串](leetcode/string/796-旋转字符串.md)
+    * [806.写字符串需要的行数](leetcoce/string/806.写字符串需要的行数.md)
 
 * chain
     * [chain/138](leetcode/chain/138.md)
@@ -137,6 +138,7 @@
     * [1518-换酒问题](leetcode/number/1518-换酒问题.md)
     * [l-1-A+b问题](leetcode/number/l-1-A+b问题.md)
     * [l-37-反转一个三位整数](leetcode/number/l-37-反转一个三位整数.md)
+    * [357.统计各位数字都不同的数字个数](leetcode/number/357.统计各位数字都不同的数字个数.md)
 
     * [greedy/435](leetcode/greedy/435.md)
     * [greedy/455](leetcode/greedy/455.md)
