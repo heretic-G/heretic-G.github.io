@@ -65,6 +65,7 @@
     * [617-合并二叉树](leetcode/BinaryTree/617-合并二叉树.md)
     * [669-修剪二叉搜索树](leetcode/BinaryTree/669-修剪二叉搜索树.md)
     * [2049-统计最高分的节点数目](leetcode/BinaryTree/2049-统计最高分的节点数目.md)
+    * [429.N叉树的层序遍历](leetcode/BinaryTree/429.N叉树的层序遍历.md)
 
 * trie
     * [208-实现Trie(前缀树)](leetcode/trie/208-实现Trie(前缀树).md)
@@ -88,6 +89,7 @@
     * [2055.蜡烛之间的盘子](leetcode/string/2055.蜡烛之间的盘子.md)
     * [796-旋转字符串](leetcode/string/796-旋转字符串.md)
     * [806.写字符串需要的行数](leetcoce/string/806.写字符串需要的行数.md)
+    * [804.唯一摩尔斯密码词](leetcoce/string/804.唯一摩尔斯密码词.md)
 
 * chain
     * [chain/138](leetcode/chain/138.md)
