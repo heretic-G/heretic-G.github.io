@@ -28,6 +28,7 @@ typescript的学习记录 主要包含一些题的实现，目前准备记录一
 * [M-16-Pop](typescript/M-16-Pop.md)
 * [M-5360-Unique](typescript/M-5360-Unique.md)
 * [M-7258-ObjectKeyPaths](typescript/M-7258-ObjectKeyPaths.md)
+* [M-5117-Without](typescript/M-5117-Without.md)
 
 * [H-6-SimpleVue](typescript/H-6-SimpleVue.md)
 * [H-17-Currying1](typescript/H-17-Currying1.md)
