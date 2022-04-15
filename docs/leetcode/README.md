@@ -42,6 +42,7 @@
     * [1658.将x减到0的最小操作数](leetcode/array/1658.将x减到0的最小操作数.md)
     * [954.二倍数对数组](leetcode/arrar/954.二倍数对数组.md)
     * [380.O(1)时间插入、删除和获取随机元素](leetcode/array/380.O(1)时间插入、删除和获取随机元素.md)
+    * [1672.最富有客户的资产总量](leetcode/array/1672.最富有客户的资产总量.md)
 * binaryTree
     * [BinaryTree/671](leetcode/BinaryTree/671.md)
     * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
@@ -91,6 +92,7 @@
     * [796-旋转字符串](leetcode/string/796-旋转字符串.md)
     * [806.写字符串需要的行数](leetcoce/string/806.写字符串需要的行数.md)
     * [804.唯一摩尔斯密码词](leetcoce/string/804.唯一摩尔斯密码词.md)
+    * [385.迷你语法分析器](leetcode/string/385.迷你语法分析器.md)
 
 * chain
     * [chain/138](leetcode/chain/138.md)
