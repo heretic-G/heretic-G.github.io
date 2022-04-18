@@ -23,4 +23,24 @@ type ArrayKeyPaths<T extends ReadonlyArray<unknown>, PreStr extends string = ''>
 }[number];
 ```
 
-测试数据有问题 卡死我了 我说总是不成
+~~测试数据有问题 卡死我了 我说总是不成~~
+
+哎 想多了... 看了下别人的思路 自己的问题
+```typescript
+type ObjectKeyPaths<
+  T extends object,
+  NotFirst extends boolean = false,
+  K extends keyof T = keyof T
+> = K extends string | number
+  ?
+      | (NotFirst extends true
+          ? `.${K}` | (K extends number ? `[${K}]` | `.[${K}]` : never)
+          : `${K}`)
+      | (T[K] extends object
+          ? `${NotFirst extends true
+              ? `.${K}` | (K extends number ? `[${K}]` | `.[${K}]` : never)
+              : `${K}`}${ObjectKeyPaths<T[K], true>}`
+          : never)
+  : never;
+
+```
