@@ -29,6 +29,7 @@ typescript的学习记录 主要包含一些题的实现，目前准备记录一
 * [M-5360-Unique](typescript/M-5360-Unique.md)
 * [M-7258-ObjectKeyPaths](typescript/M-7258-ObjectKeyPaths.md)
 * [M-5117-Without](typescript/M-5117-Without.md)
+* [M-5821-MapTypes](typescript/M-5821-MapTypes.md)
 * [M-8640-NumberRange](typescript/M-8640-NumberRange.md)
 
 * [H-6-SimpleVue](typescript/H-6-SimpleVue.md)
