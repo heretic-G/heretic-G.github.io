@@ -94,6 +94,7 @@
     * [806.写字符串需要的行数](leetcoce/string/806.写字符串需要的行数.md)
     * [804.唯一摩尔斯密码词](leetcoce/string/804.唯一摩尔斯密码词.md)
     * [385.迷你语法分析器](leetcode/string/385.迷你语法分析器.md)
+    * [821.字符的最短距离](leetcode/string/821.字符的最短距离.md)
 
 * chain
     * [chain/138](leetcode/chain/138.md)
