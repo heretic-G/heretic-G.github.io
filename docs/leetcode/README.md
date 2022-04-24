@@ -44,6 +44,7 @@
     * [380.O(1)时间插入、删除和获取随机元素](leetcode/array/380.O(1)时间插入、删除和获取随机元素.md)
     * [1672.最富有客户的资产总量](leetcode/array/1672.最富有客户的资产总量.md)
     * [386.字典序排数](leetcode/array/386.字典序排数.md)
+    * [396.旋转函数](leetcode/array/396.旋转函数.md)
 * binaryTree
     * [BinaryTree/671](leetcode/BinaryTree/671.md)
     * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
@@ -146,6 +147,7 @@
     * [l-1-A+b问题](leetcode/number/l-1-A+b问题.md)
     * [l-37-反转一个三位整数](leetcode/number/l-37-反转一个三位整数.md)
     * [357.统计各位数字都不同的数字个数](leetcode/number/357.统计各位数字都不同的数字个数.md)
+    * [868.二进制间距](leetcode/number/868.二进制间距.md)
 
     * [greedy/435](leetcode/greedy/435.md)
     * [greedy/455](leetcode/greedy/455.md)
