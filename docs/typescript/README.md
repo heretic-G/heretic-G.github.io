@@ -62,6 +62,7 @@ typescript的学习记录 主要包含一些题的实现，目前准备记录一
 * [H-2857-IsRequiredKey](typescript/H-2857-IsRequiredKey.md)
 * [H-2949-ObjectFromEntries](typescript/H-2949-ObjectFromEntries.md)
 * [H-4037-IsPalindrome](typescript/H-4037-IsPalindrome.md)
+* [H-8804-TwoSum](typescript/H-8804-TwoSum.md)
 * [H-9160-Assign](typescript/H-9160-Assign.md)
 
 * [X-151-QueryStringParser](typescript/X-151-QueryStringParser.md)
