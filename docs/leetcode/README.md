@@ -46,6 +46,7 @@
     * [386.字典序排数](leetcode/array/386.字典序排数.md)
     * [396.旋转函数](leetcode/array/396.旋转函数.md)
     * [398.随机数索引](leetcode/array/398.随机数索引.md)
+    * [883.三维形体投影面积](leetcode/array/883.三维形体投影面积.md)
 * binaryTree
     * [BinaryTree/671](leetcode/BinaryTree/671.md)
     * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
