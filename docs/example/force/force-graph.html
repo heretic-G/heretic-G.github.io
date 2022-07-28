@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style> p {margin: 0} body { margin: 0; } </style>
+  <script src="//unpkg.com/force-graph"></script>
+</head>
+
+<body>
+<div>
+  <span></span>
+  <input type="text">
+  <button>确定</button>
+</div>
+<div id="graph"></div>
+<script>
+  let btn = document.querySelector('button')
+  btn.addEventListener('click', function () {
+    let inputEl = document.querySelector('input')
+    localStorage.setItem('node', inputEl.value || 1000)
+    window.location.reload()
+  })
+  const size = Number(localStorage.getItem('node') || 1000)
+  document.querySelector('span').innerText = size
+  const map = {}
+  function createData (index) {
+    return {
+      id: String(index),
+      user: "mbostock",
+      description:"Force-Directed Graph"
+    }
+  }
+  function createLinks () {
+    return {source: String((Math.random() * size) | 0), target: String((Math.random() * size) | 0)}
+  }
+  const nodes = Array(size).fill(1).map((curr, index) => createData(index))
+  const data = {
+    links: Array(size).fill(1).map(curr => createLinks()),
+    nodes: nodes
+  }
+  const elem = document.getElementById('graph');
+
+  const Graph = ForceGraph()(elem)
+          .backgroundColor('#101020')
+          .nodeRelSize(6)
+          .nodeAutoColorBy('user')
+          .nodeLabel(node => `${node.user}: ${node.description}`)
+          .linkColor(() => 'rgba(255,255,255,0.2)')
+          .linkDirectionalParticles(1)
+          .onNodeClick(node => console.log(node.id))
+          .graphData(data);
+</script>
+</body>
+</html>

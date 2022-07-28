@@ -1,0 +1,110 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=graph-force&code=LYTwwgFghgTgLgOgM4QPYHcAyqoBMCWAdgOYAUAlANwBQAJAsQKZykBKA8uwCoD6ACgEEuACQAEAalEByAPS4ocKDKhIkzOQqUAbRkgC0wfGphQARjqQIAVklSEpAGlEAzAK6EAxnHx3RpYiYADhDkogDe1KKioJCwiBD4uIzYeERkVJGiAVDBCISoSZbOqDAAolAeEKRunt6-pPlJoRFRUY2MyCDApqhaAMr4AF6MogC8ogBsNFEAvhlRqIF1hGPhmVHecDoAXGutrXCMAB5wu1KYuqIAskaMJua6juutSK6mhydnACKMzlCuWjgoi0UBAqFccCe-w2izOPTgcFQwCh0J0zlO0hg-GIEEhzxmDmeiN63kCuzCBOeOiYhFwuwA2s8oi1oVEZDJRGodF5GLgrgVGGckGkdCjWfJFLtsrkPApGMQSvhdAhgDlqu4vD4VqQoM0mdCYMxXDAVlA8lBgIxpqzRHN9TNngBdQn7YxKpAM_Us1mEC2C6QXJDXW73Cxi6FwECBf1SaUQcP7EFgiFnYowDyMBOtCVQKVBCB5AVIF02rREADWHqy-YQZcIlZLrNlhwVWN0eZyBeb8sVukbBpwwF2cBgrkY_cTZkYWnJ-v2gVQwuWZyxOLxNttE9aaYzs43UUNgQBwrsuwAjAAGC9z232p2ZGbWmLQeDIZjsJZa0iLZYZOaUIA
+	请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <style>
+        #container {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body style="height: 100%; margin: 0">
+<div>
+    <span></span>
+    <input type="text">
+    <button>确定</button>
+</div>
+<div id="container" style="height: 100%"></div>
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+
+<script type="text/javascript">
+
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', function () {
+        let inputEl = document.querySelector('input')
+        localStorage.setItem('node', inputEl.value || 1000)
+        window.location.reload()
+    })
+    const size = Number(localStorage.getItem('node') || 1000)
+    document.querySelector('span').innerText = size
+
+
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var app = {};
+    var ROOT_PATH = 'https://echarts.apache.org/examples';
+    var option;
+
+    myChart.showLoading();
+    function zzz (a,b) {
+        b()
+    }
+    zzz(ROOT_PATH + '/data/asset/data/les-miserables.json', function (z) {
+        const num = size
+        const Node = Array(num).fill(1).map((curr, index) => {
+            return {
+                "id": String(index),
+                label: String(index)
+            }
+        })
+        const links = Array(num).fill(1).map((curr, index) => {
+            return {
+                "source": String(Math.random() * num | 0),
+                "target": String(Math.random() * num | 0)
+            }
+        })
+        const graph = {
+            "nodes": Node,
+            "links": links,
+        }
+        myChart.hideLoading();
+        graph.nodes.forEach(function (node) {
+            node.symbolSize = 6;
+        });
+        option = {
+            animation: false,
+            title: {
+                text: 'Les Miserables',
+                subtext: 'Default layout',
+                top: 'bottom',
+                left: 'right'
+            },
+            tooltip: {},
+            series: [
+                {
+                    name: 'Les Miserables',
+                    type: 'graph',
+                    layout: 'force',
+                    data: graph.nodes,
+                    links: graph.links,
+                    categories: graph.categories,
+                    roam: true,
+                    label: {
+                        position: 'right'
+                    },
+                    force: {
+                        repulsion: 100
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    });
+
+    if (option && typeof option === 'object') {
+        myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+</script>
+</body>
+</html>
