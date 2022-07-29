@@ -43,6 +43,7 @@
   const Graph = ForceGraph()(elem)
           .backgroundColor('#101020')
           .nodeRelSize(6)
+          .zoom(1)
           .nodeAutoColorBy('user')
           .nodeLabel(node => `${node.user}: ${node.description}`)
           .linkColor(() => 'rgba(255,255,255,0.2)')
