@@ -84,4 +84,8 @@
     我的机子 590mb+ 8700ms -> 2800ms 还是比较大的优化效率 但是发现个奇怪的现象 我使用4-16发现实际最后生成时间差异不大这里估计是已经占据了最大的闲时 
     hash-wasm 使用他更快一些 语言的打击 测试能到1300
     以前还有个方案就是对于数据不是全量计算 这里还能继续省时间
-    
+
+[力导图几个demo测试肉眼的性能](https://heretic-g.github.io/example/force/index.html)
+
+    实际时间很短 只有半天多 去实现echarts antv d3-force three 基于d3-force 的几个大致的性能差异
+    目前需求还是围绕2d所以这里暂定就是force-graph他是基于d3-force的 这里唯一不确定就是渲染上用pixi和纯d3的差异有多大
