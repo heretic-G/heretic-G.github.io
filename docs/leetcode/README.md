@@ -47,6 +47,8 @@
     * [396.旋转函数](leetcode/array/396.旋转函数.md)
     * [398.随机数索引](leetcode/array/398.随机数索引.md)
     * [883.三维形体投影面积](leetcode/array/883.三维形体投影面积.md)
+    * [417.太平洋大西洋水流问题.md](leetcode/array/417-太平洋大西洋水流问题.md)
+    * [904.水果成篮.md](leetcode/array/904-水果成篮.md)
 * binaryTree
     * [BinaryTree/671](leetcode/BinaryTree/671.md)
     * [BinaryTree/offer-37](leetcode/BinaryTree/offer-37.md)
@@ -98,6 +100,7 @@
     * [804.唯一摩尔斯密码词](leetcoce/string/804.唯一摩尔斯密码词.md)
     * [385.迷你语法分析器](leetcode/string/385.迷你语法分析器.md)
     * [821.字符的最短距离](leetcode/string/821.字符的最短距离.md)
+    * [856.括号的分数](leetcode/string/856.括号的分数.md)
 
 * chain
     * [chain/138](leetcode/chain/138.md)
