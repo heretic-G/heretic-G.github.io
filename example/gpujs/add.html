@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="./gpu.js"></script>
+<script>
+  // gpu计算不一定会加速计算 这里主要是数据传输 编译指令 
+  const gpu = new GPU.GPU();
+  const numbers = Array.from({length: 100000}, () => Math.floor(Math.random() * 20 | 0));
+  const result = Array.from({length: 100000}, () => 0);
+  
+  const isEvenKernel = gpu.createKernel(function(arr) {
+    return (arr[this.thread.x] * 200 - 21) >> 2;
+  }, {
+    output: [numbers.length]
+  });
+  console.time('gpujs耗时')
+  const evenFlags = isEvenKernel(numbers);
+  console.timeEnd('gpujs耗时')
+  console.time('js耗时')
+  for(let i = 0;i < numbers.length;i++) {
+    result[i] = (numbers[i] * 200 - 21) >> 2;
+  }
+  console.timeEnd('js耗时')
+</script>
+</body>
+</html>

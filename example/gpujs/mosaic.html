@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<canvas></canvas>
+<script src="./gpu.js"></script>
+<script>
+  // gpu计算不一定会加速计算 这里主要是数据传输 编译指令 
+  const gpu = new GPU.GPU();
+  const size = 20;
+  const w = 3648
+  const h = 2736
+  const image = document.createElement('img');
+  const kernel = gpu.createKernel(function(image, size) {
+    const x = this.thread.x - this.thread.x % size
+    const y = this.thread.y - this.thread.y % size
+    const pixel = image[y][x];
+    this.color(pixel[0], pixel[1], pixel[2], pixel[3]);
+  })
+    .setGraphical(true)
+    .setOutput([3648, 2736])
+  
+
+  setTimeout(() => {
+    image.src = './demo.jpeg';
+    image2.src = './demo.jpeg';
+  }, 1000)
+  
+  image.onload = () => {
+    console.time('gpujs带build逻辑耗时')
+    kernel(image, size);
+    console.timeEnd('gpujs带build逻辑耗时')
+    console.time('gpujs计算耗时')
+    kernel(image, size);
+    document.getElementsByTagName('body')[0].appendChild(kernel.canvas);
+    console.timeEnd('gpujs计算耗时')
+  };
+
+  const image2 = document.createElement('img');
+  image2.onload = () => {
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const width = image2.width;
+    const height = image2.height;
+    canvas.width = width
+    canvas.height = height
+
+    ctx.drawImage(image2, 0, 0);
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    console.time('js 耗时')
+    
+    const data = imageData.data;
+    for (let y = 0; y < height; y += size) {
+      for (let x = 0; x < width; x += size) {
+        const posStart = (y * width + x) * 4
+        const r = data[posStart]
+        const g = data[posStart + 1]
+        const b = data[posStart + 2]
+        const a = data[posStart + 3]
+        for (let sizeX = 0; sizeX < size; sizeX++) {
+          for (let sizeY = 0; sizeY < size; sizeY++) {
+            const posStart = ((y + sizeY) * width + (x + sizeX)) * 4
+            data[posStart] = r
+            data[posStart + 1] = g
+            data[posStart + 2] = b
+            data[posStart + 3] = a
+          }
+        }
+      }
+    }
+    console.timeEnd('js 耗时')
+    ctx.putImageData(imageData, 0, 0);
+  };
+</script>
+</body>
+</html>

@@ -1,6 +1,11 @@
 * 文章
 
+  * [gpujs基础demo](docs/gpu/gpujs.md)
+
 * 可运行示例
+
+  * [gpujs基础demo-> 加法](example/gpujs/add.html)
+  * [gpujs基础demo-> 图片打码](example/gpujs/add.html)
 
 * 计划列表
 
