@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<canvas height="2400" width="6000" style="height: 600px; width: 1500px; border: 1px solid #333"></canvas>
+<script>
+  const svg = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.34656 4.04152L5.99996 2.07666L4.65336 4.04152C4.45831 4.32611 4.17112 4.53477 3.84018 4.63232L1.55537 5.30584L3.00793 7.19371C3.21833 7.46716 3.32802 7.80477 3.31854 8.14966L3.25305 10.5308L5.49739 9.73269C5.82246 9.61709 6.17745 9.61709 6.50253 9.73269L8.74687 10.5308L8.68138 8.14966C8.67189 7.80477 8.78159 7.46716 8.99198 7.19371L10.4445 5.30584L8.15974 4.63232C7.8288 4.53477 7.5416 4.32611 7.34656 4.04152ZM6.61861 1.65267C6.32071 1.21799 5.67921 1.21799 5.3813 1.65267L4.0347 3.61752C3.93718 3.75982 3.79358 3.86415 3.62811 3.91293L1.3433 4.58645C0.83784 4.73545 0.639607 5.34555 0.960954 5.7632L2.41352 7.65107C2.51872 7.78779 2.57356 7.9566 2.56882 8.12904L2.50333 10.5102C2.48884 11.0369 3.00783 11.414 3.50434 11.2374L5.74867 10.4393C5.91121 10.3815 6.08871 10.3815 6.25124 10.4393L8.49558 11.2374C8.99209 11.414 9.51107 11.0369 9.49658 10.5102L9.43109 8.12904C9.42635 7.9566 9.4812 7.78779 9.5864 7.65107L11.039 5.7632C11.3603 5.34555 11.1621 4.73545 10.6566 4.58645L8.3718 3.91293C8.20633 3.86415 8.06274 3.75982 7.96521 3.61752L6.61861 1.65267Z" fill="#999999"/></svg>'
+  const canvas = document.querySelector('canvas')
+  const ctx = canvas.getContext('2d')
+  const img = new Image()
+  // const imgData = `data:image/svg+xml;base64,${window.btoa(svg)}`
+  const imgData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGvSURBVHgBrZPBKwRRHMd/vzGmdnKYwkGJdREHWVwoir/AniRRc3HgIPwDKMmBcsTpbQo5aA8OUiLJjeZGIkOOlNPQrn0/7z1ZY3ZmW7Xfmun35v3m0/f3e78HUCZh1EbSti0zV5kkIAtRs4iD865nTtOMvZUEkoAY19cQcVBsW4W/EOOYXdhlzI0EDdt2HMk4ER/jUEQE4BJmBvww/C/ED3vHTMdPqVqeyPX5IKS1pRlGR4agr7cHTNOEQCnxGOlzvvW3G42MB39iV2cCZqcmwPM8Bbm+uYXF5dWgrzcPs03SlXKEn0YixD2cnV/A+OSMAkh3jQ31gQxUJysjXS01KABdXjnqkSoE+FkYz4OKaW1lCWprquHw6Bgen54j875BRK4ghyZsbe+pPskehYm0nLKtemRUZNOycWGJY+LUipVGUKlAFfLlOM5HW3tXnXDVHUw0zRjc3T/Ay8trCAbZTmoj9VuadKVl5zNkiGvxd5b20wcQJY651E+cH0gmZoGjNiBCF0oUigtdAJLaZeuuhBFBqhQQcUz8QiOUtKetKvD6OYdEJEgDZ4dtpqGc+gKsKZnVHWjaygAAAABJRU5ErkJggg=='
+  img.src = imgData
+  img.onload = function () {
+    const offscreen = new window.OffscreenCanvas(30, 30)
+    const offscreenCtx = offscreen.getContext('2d')
+    offscreenCtx.drawImage(img, 0, 0, 30, 30)
+    const bitmap = offscreen.transferToImageBitmap()
+    function render () {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      for (let i =0; i < 5000; i++) {
+        ctx.drawImage(bitmap, Math.random() * 6000, Math.random() * 2400, 30, 30)
+      }
+      requestAnimationFrame(render)
+    }
+    requestAnimationFrame(render)
+  }
+</script>
+</body>
+</html>

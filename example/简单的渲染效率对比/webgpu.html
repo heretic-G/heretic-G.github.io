@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebGPU Sprites</title>
+  <style>
+    body { margin: 0; }
+  </style>
+</head>
+<body>
+<canvas height="2400" width="6000" style="height: 600px; width: 1500px; border: 1px solid #333"></canvas>
+<script type="module">
+  async function init() {
+    const canvas = document.querySelector('canvas');
+    const adapter = await navigator.gpu.requestAdapter();
+    const device = await adapter.requestDevice();
+    const context = canvas.getContext('webgpu');
+
+    const canvasFormat = navigator.gpu.getPreferredCanvasFormat();
+    context.configure({
+      device: device,
+      format: canvasFormat,
+    });
+
+    const imgData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGvSURBVHgBrZPBKwRRHMd/vzGmdnKYwkGJdREHWVwoir/AniRRc3HgIPwDKMmBcsTpbQo5aA8OUiLJjeZGIkOOlNPQrn0/7z1ZY3ZmW7Xfmun35v3m0/f3e78HUCZh1EbSti0zV5kkIAtRs4iD865nTtOMvZUEkoAY19cQcVBsW4W/EOOYXdhlzI0EDdt2HMk4ER/jUEQE4BJmBvww/C/ED3vHTMdPqVqeyPX5IKS1pRlGR4agr7cHTNOEQCnxGOlzvvW3G42MB39iV2cCZqcmwPM8Bbm+uYXF5dWgrzcPs03SlXKEn0YixD2cnV/A+OSMAkh3jQ31gQxUJysjXS01KABdXjnqkSoE+FkYz4OKaW1lCWprquHw6Bgen54j875BRK4ghyZsbe+pPskehYm0nLKtemRUZNOycWGJY+LUipVGUKlAFfLlOM5HW3tXnXDVHUw0zRjc3T/Ay8trCAbZTmoj9VuadKVl5zNkiGvxd5b20wcQJY651E+cH0gmZoGjNiBCF0oUigtdAJLaZeuuhBFBqhQQcUz8QiOUtKetKvD6OYdEJEgDZ4dtpqGc+gKsKZnVHWjaygAAAABJRU5ErkJggg==';
+    const imgBlob = await (await fetch(imgData)).blob();
+    const imgBitmap = await createImageBitmap(imgBlob);
+
+    const texture = device.createTexture({
+      size: [imgBitmap.width, imgBitmap.height],
+      format: 'rgba8unorm',
+      usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
+    });
+
+    device.queue.copyExternalImageToTexture(
+      {source: imgBitmap},
+      {texture: texture},
+      [imgBitmap.width, imgBitmap.height]
+    );
+
+    const spriteCount = 5000;
+    const spritePositions = new Float32Array(spriteCount * 2);
+    for (let i = 0; i < spriteCount; ++i) {
+      spritePositions[i * 2] = Math.random() * canvas.width;
+      spritePositions[i * 2 + 1] = Math.random() * canvas.height;
+    }
+
+    const positionBuffer = device.createBuffer({
+      size: spritePositions.byteLength,
+      usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
+    });
+
+    const vertexBuffer = device.createBuffer({
+      size: new Float32Array([0, 0, 30, 0, 0, 30, 30, 30]).byteLength,
+      usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
+      mappedAtCreation: true
+    });
+    new Float32Array(vertexBuffer.getMappedRange()).set([0, 0, 30, 0, 0, 30, 30, 30]);
+    vertexBuffer.unmap();
+
+    const shaderModule = device.createShaderModule({
+      code: `
+        struct VertexInput {
+          @location(0) position: vec2f,
+          @builtin(instance_index) instanceIndex: u32,
+        };
+        struct VertexOutput {
+          @builtin(position) position: vec4f,
+          @location(0) uv: vec2f,
+        };
+        @group(0) @binding(0) var<storage, read> spritePositions: array<vec2f>;
+
+        @vertex
+        fn vs_main(input: VertexInput) -> VertexOutput {
+          var output: VertexOutput;
+          let spriteSize = vec2f(30.0, 30.0);
+          let pos = input.position;
+          let instancePos = spritePositions[input.instanceIndex];
+          output.position = vec4f(pos + instancePos, 0.0, 1.0);
+          output.position = output.position / vec4f(vec2f(${canvas.width /2}, ${canvas.height /2}), 1.0, 1.0) * 2.0 - vec4f(2.0, 2.0, 0.0, 0.0);
+          output.uv = input.position / spriteSize;
+          return output;
+        }
+
+        @group(0) @binding(1) var mySampler: sampler;
+        @group(0) @binding(2) var myTexture: texture_2d<f32>;
+
+        @fragment
+        fn fs_main(input: VertexOutput) -> @location(0) vec4f {
+          return textureSample(myTexture, mySampler, input.uv);
+        }
+      `
+    });
+
+    const pipeline = device.createRenderPipeline({
+      layout: 'auto',
+      vertex: {
+        module: shaderModule,
+        entryPoint: 'vs_main',
+        buffers: [{
+          arrayStride: 2 * 4, // 2 floats * 4 bytes/float
+          attributes: [{
+            shaderLocation: 0,
+            offset: 0,
+            format: 'float32x2',
+          }],
+        }],
+      },
+      fragment: {
+        module: shaderModule,
+        entryPoint: 'fs_main',
+        targets: [{format: canvasFormat}],
+      },
+      primitive: {
+        topology: "triangle-strip",
+        stripIndexFormat: "uint32"
+      }
+    });
+
+    const sampler = device.createSampler({
+      magFilter: 'linear',
+      minFilter: 'linear',
+    });
+
+    const bindGroup = device.createBindGroup({
+      layout: pipeline.getBindGroupLayout(0),
+      entries: [
+        {
+          binding: 0,
+          resource: {
+            buffer: positionBuffer
+          }
+        },
+        {
+          binding: 1,
+          resource: sampler
+        },
+        {
+          binding: 2,
+          resource: texture.createView()
+        }
+      ]
+    });
+
+    function render() {
+      const spriteCount = 5000;
+      const spritePositions = new Float32Array(spriteCount * 2);
+      for (let i = 0; i < spriteCount; ++i) {
+        spritePositions[i * 2] = Math.random() * canvas.width;
+        spritePositions[i * 2 + 1] = Math.random() * canvas.height;
+      }
+
+      device.queue.writeBuffer(positionBuffer, 0, spritePositions);
+
+      const commandEncoder = device.createCommandEncoder();
+      const textureView = context.getCurrentTexture().createView();
+      const renderPassDescriptor = {
+        colorAttachments: [
+          {
+            view: textureView,
+            clearValue: {r: 0.0, g: 0.0, b: 0.0, a: 1.0},
+            loadOp: 'clear',
+            storeOp: 'store',
+          },
+        ],
+      };
+
+      const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
+      passEncoder.setPipeline(pipeline);
+      passEncoder.setBindGroup(0, bindGroup);
+      passEncoder.setVertexBuffer(0, vertexBuffer);
+      passEncoder.draw(4, spriteCount);
+      passEncoder.end();
+
+      device.queue.submit([commandEncoder.finish()]);
+
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+  }
+  init()
+</script>
+</body>
+</html>
