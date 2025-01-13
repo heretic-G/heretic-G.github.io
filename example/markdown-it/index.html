@@ -273,6 +273,7 @@ Markdown Nice 这么好用，简直是{喜大普奔|hē hē hē hē}呀！
 `
   const md = markdownit()
   window._asd = md
+  window._str = str
   const text = md.renderer.rules.text
   let num = 0
   md.renderer.rules.text = function (tokens, idx, options, env, self) {
@@ -284,17 +285,17 @@ Markdown Nice 这么好用，简直是{喜大普奔|hē hē hē hē}呀！
     return textStr
   }
   const parseList = md.parse(str, {})
-  parseList.forEach(item => {
-    if (item.children) {
-      item.children.forEach(curr => {
-        if (curr.content) {
-          curr.content = '-'
-        }
-      })
-    } else {
-      item.content = '-'
-    }
-  })
+  // parseList.forEach(item => {
+  //   if (item.children) {
+  //     item.children.forEach(curr => {
+  //       if (curr.content) {
+  //         curr.content = '-'
+  //       }
+  //     })
+  //   } else {
+  //     item.content = '-'
+  //   }
+  // })
   const result = md.renderer.render(parseList, md.options, {})
   document.querySelector('#aaa').innerHTML = result
   const allText = document.querySelector('#aaa').innerText
