@@ -1,7 +1,8 @@
 * 文章
 
-  * [gpujs基础demo](docs/gpu/gpujs.md)
-  * [canvas渲染效率对比](docs/canvas/canvas渲染效率对比.md)
+  * [gpujs基础demo](docs/gpu/gpujs的基础调用/1-index.md)
+  * [canvas渲染效率对比](docs/canvas/渲染效率对比/1-index.md)
+  * [如何按照长度解析部分内容](docs/markdown/markdown-it/如何按照长度解析部分内容.md)
 
 * 可运行示例
 
@@ -12,6 +13,7 @@
   * [canvas渲染效率demo-> GPU ImageBitMap](example/简单的渲染效率对比/GPU-imageBitMap.html)
   * [canvas渲染效率demo-> webgl](example/简单的渲染效率对比/webgl2.html)
   * [canvas渲染效率demo-> webgpu](example/简单的渲染效率对比/webgpu.html)
+  * [markdown-it渲染文本长度限制的demo](example/markdown-it/index.html)
 
 * 计划列表
 
