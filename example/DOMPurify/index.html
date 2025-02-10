@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="DOMPurify.js"></script>
+</head>
+<body>
+<p>断点源码使用</p>
+<script>
+  const dirty = `<a onmouseover= "javascript:alert('a_onmouseover')">12</ a>
+
+<svg onload=" javascript:alert('svg')"></svg >
+
+<body onload= "javascript:alert('body')"></body>
+
+<select autofocus onfocus="javascript:alert('select' )"></select>
+
+<textarea autofocus onfocus="javascript:alert('textarea' )"></textarea>
+
+<keygen autofocus onfocus="javascript:alert('keygen' )"></keygen>
+
+<audio><source onerror="javascript:alert('source')"></ audio>
+<svg>
+  <foreignObject>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <img src=x onerror=alert(1)>
+    </div>
+  </foreignObject>
+</svg>`
+  debugger
+  const clean = DOMPurify.sanitize(dirty);
+  document.body.innerHTML = clean;
+</script>
+</body>
+</html>

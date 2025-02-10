@@ -3,7 +3,8 @@
   * [gpujs基础demo](docs/gpu/gpujs的基础调用/1-index.md)
   * [canvas渲染效率对比](docs/canvas/渲染效率对比/1-index.md)
   * [如何按照长度解析部分内容](docs/markdown/markdown-it/如何按照长度解析部分内容.md)
-  * [源码的基础流程(不严谨)](docs/markdown/markdown-it/流程.md)
+  * [源码的基本流程(不严谨)](docs/markdown/markdown-it/流程.md)
+  * [DOMPurify基本流程](docs/DOMPurify/流程.md)
 
 * 可运行示例
 
@@ -15,6 +16,7 @@
   * [canvas渲染效率demo-> webgl](example/简单的渲染效率对比/webgl2.html)
   * [canvas渲染效率demo-> webgpu](example/简单的渲染效率对比/webgpu.html)
   * [markdown-it渲染文本长度限制的demo](example/markdown-it/index.html)
+  * [DOMPurify断点用](example/DOMPurify/index.html)
 
 * 计划列表
 
