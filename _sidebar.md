@@ -9,7 +9,7 @@
 * 可运行示例
 
   * [gpujs基础demo-> 加法](example/gpujs/add.html)
-  * [gpujs基础demo-> 图片打码](example/gpujs/add.html)
+  * [gpujs基础demo-> 图片打码](example/gpujs/mosaic.html)
   * [canvas渲染效率demo-> svg](example/简单的渲染效率对比/svg.html)
   * [canvas渲染效率demo-> cpu ImageBitMap](example/简单的渲染效率对比/CPU-ImageBitMap.html)
   * [canvas渲染效率demo-> GPU ImageBitMap](example/简单的渲染效率对比/GPU-imageBitMap.html)
